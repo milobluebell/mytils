@@ -14,10 +14,14 @@
     "test": "jest ./tests"
   },
   "dependencies": {
-    "moment": "^2.24.0"
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "validator": "^12.2.0"
   },
   "peerDependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "lodash": "^4.17.15",
+    "validator": "^12.2.0"
   },
   "devDependencies": {
     "@mlz/lint": "^1.1.10",

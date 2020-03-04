@@ -1,26 +1,28 @@
 import { FunctionalComponent, h } from 'preact';
 import { Button } from 'src/components/button';
 import { Demo } from 'src/components/demoTemplate';
+import isObject from 'src/utils/isX/isObject';
+import isArray from 'src/utils/isX/isArray';
+import translateInputValue from 'src/utils/Translate/translateInputValue';
 
-const h1Style = {
+const hStyle = {
   backgroundColor: `#8e8e8e`,
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
-  const testFunc54t1rfqdsfgvadsgasdfdsafasdfas = (data) => {
-    console.log(data);
-    return `test1`;
+  const testSum = (data) => {
+    return data.reduce((prev, curr) => {
+      return (prev += parseInt(curr, 10));
+    }, 0);
   };
-  const testFunc54t1rfqdsfgvadsgasdfds34321421412afasdfas = (data) => {
-    console.log(data);
-    return `test2`;
-  };
+
   return (
     <div>
-      <h1 style={h1Style}>Funs Demos：</h1>
-      <Demo data={{ a: 1, b: 2 }} method={testFunc54t1rfqdsfgvadsgasdfdsafasdfas}></Demo>
-      <Demo data={{ a: 3, b: 4 }} method={testFunc54t1rfqdsfgvadsgasdfds34321421412afasdfas}></Demo>
-      <p>This is the Home component.</p>
+      <h2 style={hStyle}>Funs Demos</h2>
+      <Demo params={[1, 2, 3]} method={testSum}></Demo>
+      <Demo params={['1234']} method={isObject}></Demo>
+      <Demo params={[1234]} method={isArray}></Demo>
+      <Demo params={['1']} method={translateInputValue}></Demo>
     </div>
   );
 };
