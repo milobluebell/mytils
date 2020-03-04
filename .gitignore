@@ -1,0 +1,35 @@
+
+# devices
+/.vscode/
+/.idea/
+.DS_Store
+.env*
+
+# dependencies
+/node_modules
+*/**/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/pages/docs/*
+*/**/dll/*
+
+# dist
+/es
+/dist
+/lib
+*.tgz
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock

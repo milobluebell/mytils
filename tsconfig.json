@@ -1,0 +1,47 @@
+{
+  "extends": "@mlz/lint/tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": ["dom", "es2016"],
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "outDir": "build",
+    "baseUrl": "./",
+    "paths": {
+      "root/*": ["/*"],
+      "src/*": ["./src/*"],
+    },
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "lib",
+    "es"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/index.ts", "src/index.tsx",
+  ]
+}
