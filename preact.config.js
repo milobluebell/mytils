@@ -30,5 +30,6 @@ export default {
             "src",
             "index"
         );
+        config.resolve.alias['src'] = resolve(__dirname, './src')
     }
 };
