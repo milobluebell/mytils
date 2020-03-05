@@ -1,6 +1,8 @@
 import { FunctionalComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Button } from './button';
+import translateInputValue from 'src/utils/Translate/translateInputValue';
+import getDataType from 'src/utils/Calc/dataType';
 
 interface IDemoProps {
   method: () => any;
@@ -66,18 +68,25 @@ export const Demo: FunctionalComponent = (props: IDemoProps) => {
                   data[index] = e.target.value;
                   setData(data);
                 }}>
-                {JSON.stringify(item).toString() || 'undefined'}
+                {item?.toString()}
               </textarea>
             </td>
           </tr>
           <tr>
             <td>数据类型：</td>
-            <td>{typeof item}</td>
+            <td>{getDataType(item)}</td>
           </tr>
         </table>
       ))}
-      <Button onClick={() => setResult(props.method(data.length === 1 ? data[0] : data))}>{props?.method.name}</Button>
-      {result ? <span style={resultStyle}>运算结果：{result.toString()}</span> : null}
+      <Button
+        onClick={() => {
+          const newData = data.map((item) => translateInputValue(item));
+          setData(newData);
+          setResult(data.length === 1 ? props.method(data[0]) : props.method(...data));
+        }}>
+        {props?.method.name}
+      </Button>
+      {result ? <span style={resultStyle}>运算结果：{result?.toString()}</span> : null}
       <a style={Object.assign({}, tagStyle, document.documentElement.clientWidth <= 760 ? { bottom: 0 } : { top: 0 })} href={`#${props.method.name}`}>
         {props.method.name}
       </a>
