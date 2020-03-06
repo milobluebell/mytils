@@ -1,8 +1,8 @@
 /**
  * 
- * @param param 
- * @func  判断参数的数据类型
- * @return string 值枚举就是types_zh中key的枚举
+ * @param   param 
+ * @func    判断参数的数据类型
+ * @return  string 值枚举就是types_zh中key的枚举
  */
 const types_zh = {
   'array': '数组',

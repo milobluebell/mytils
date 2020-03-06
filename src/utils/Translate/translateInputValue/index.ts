@@ -8,7 +8,9 @@ import Regs from 'src/utils/Regs/regs';
  * @func 根据input标签输入的内容，自动转换成javascript对应的数据类型。否则会被默认为string。
  */
 const translateInputValue = (_string: string) => {
-  if (isNumeric(_string, false) || _string === `NaN`) {
+  if (typeof _string === 'number') {
+    return _string;
+  } else if (isNumeric(_string, false) || _string === `NaN`) {
     // 是数字
     return _string === `NaN` ? NaN : _string.includes('.') ? parseFloat(_string) : parseInt(_string, 10);
   } else {
