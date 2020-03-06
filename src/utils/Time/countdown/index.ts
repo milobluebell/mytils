@@ -49,5 +49,5 @@ const countdown = ($startAt: number, $endAt: number, formatter?: string | object
  * @param  formatter  string
  * @return            string  
  */
-// const countdownFromNow = ($endAt, $formatter?: string[]) => countdown();
+export const countdownFromNow = ($endAt: number, formatter?: string[]) => countdown(new Date().getTime(), $endAt, formatter);
 export default countdown;
