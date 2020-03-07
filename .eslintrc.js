@@ -4,11 +4,6 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  settings: {
-    react: {
-      version: '16.9',
-    },
-  },
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'markdown', 'react', 'prettier', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'markdown', 'prettier'],
 };

@@ -3,7 +3,6 @@
   "compilerOptions": {
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
     "lib": ["dom", "es2016"],
     "target": "es6",
     "module": "esnext",
@@ -12,12 +11,12 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveConstEnums": true,
-    "removeComments": false,
+    "removeComments": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": false,
     "strictNullChecks": false,
-    "outDir": "build",
+    "outDir": "dist",
     "baseUrl": "./",
     "paths": {
       "root/*": ["/*"],
@@ -26,11 +25,12 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": false
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationDir": "./dist/types",
   },
   "exclude": [
     "node_modules",
-    "build",
     "dist",
     "lib",
     "es"
@@ -39,9 +39,7 @@
     "useBabel": true
   },
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/index.ts", "src/index.tsx",
+    "src/utils",
+    "types"
   ]
 }
