@@ -8,7 +8,7 @@
     "start:development": "npm run -s dev",
     "build": "preact build",
     "serve": "preact build && sirv build --port 8080 --cors --single",
-    "dist": "rollup -c --no-conflict",
+    "dist": "rollup -c",
     "dev": "preact watch",
     "doc": "npx docsify serve docs",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
@@ -82,6 +82,7 @@
   "unpkg": "dist/umd/funs.js",
   "main": "dist/lib/funs.js",
   "module": "dist/es/funs.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist",
     "es",

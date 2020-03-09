@@ -24,6 +24,10 @@ const basicConfig = function (type = 'es') {
       format: type,
       sourceMap: true,
       exports: 'named',
+      globals: {
+        'moment': 'moment',
+        '_': 'lodash',
+      },
     }, type === 'es' ?
       { file: packageJson.module, } : type === 'cjs' ?
         { file: packageJson.main, } : {

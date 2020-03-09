@@ -19,7 +19,6 @@
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
-      "root/*": ["/*"],
       "src/*": ["./src/*"],
     },
     "forceConsistentCasingInFileNames": true,
