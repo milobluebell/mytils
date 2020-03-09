@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { uniTime } from './../aux';
+import { uniTime, makeupWithO } from './../aux';
 import _ from 'lodash';
 
 /**
@@ -11,11 +11,11 @@ import _ from 'lodash';
 * @return           string
 */
 // @desc 指定的是小于这个时间(s)的时候的展示格式
-const formatMap = {
+export const formatMap = {
   // 1min以内
-  [`${60 * 1}s`]: '{m}分钟{s}秒',
+  [`${60 * 1}s`]: '{m}:{s}',
   // 1小时以内
-  [`${60 * 60}s`]: '{m}分钟{s}秒',
+  [`${60 * 60}s`]: '{m}:{s}',
   // 24h以内
   [`${60 * 60 * 24}s`]: '{h}:{m}:{s}',
   // 大于24h，且小于72h
@@ -34,7 +34,16 @@ const countdown = ($startAt: number, $endAt: number, formatter?: string | object
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     const duration = moment.duration(gutter);
-    const result = theFormat.replace(/\{d+\}/g, duration.days().toString()).replace(/\{h+\}/g, duration.hours().toString()).replace(/\{m+\}/g, duration.minutes().toString()).replace(/\{s+\}/g, duration.seconds().toString());
+    const replacements = [
+      { reg: /\{w+\}/g, text: 'weeks' },
+      { reg: /\{d+\}/g, text: 'days' },
+      { reg: /\{h+\}/g, text: 'hours' },
+      { reg: /\{m+\}/g, text: 'minutes' },
+      { reg: /\{s+\}/g, text: 'seconds' },
+    ]
+    const result = replacements.reduce((prev, curr) => {
+      return prev += theFormat.replace(curr.reg, makeupWithO(duration[curr.text]()));
+    }, '');
     return result;
   } else {
     throw new Error('start time must be earlier, but end time was');

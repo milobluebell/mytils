@@ -34,9 +34,6 @@
     "lib",
     "es"
   ],
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true
-  },
   "include": [
     "src/utils",
     "types"

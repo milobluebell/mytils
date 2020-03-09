@@ -1,6 +1,6 @@
 {
-  "name": "youtilz",
-  "version": "0.0.1",
+  "name": "mytils",
+  "version": "0.0.2",
   "description": "gave you some useful functions(utils)",
   "scripts": {
     "start": "per-env",
@@ -38,7 +38,6 @@
     "@types/webpack-env": "^1.15.1",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
-    "css-loader": "^1.0.1",
     "docsify": "^4.10.2",
     "docsify-cli": "^4.4.0",
     "eslint": "^6.8.0",
@@ -65,8 +64,7 @@
     "sirv-cli": "^1.0.0-next.3",
     "ts-jest": "^25.2.0",
     "ts-loader": "^6.2.1",
-    "typescript": "~3.7.4",
-    "typings-for-css-modules-loader": "^1.7.0"
+    "typescript": "~3.7.4"
   },
   "author": "milo",
   "license": "MIT",
@@ -77,7 +75,8 @@
   "keywords": [
     "javascript",
     "utils",
-    "typescript"
+    "nodeJs",
+    "functions"
   ],
   "unpkg": "dist/umd/funs.js",
   "main": "dist/lib/funs.js",
