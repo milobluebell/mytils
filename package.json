@@ -1,7 +1,7 @@
 {
-  "name": "funs",
+  "name": "youtilz",
   "version": "0.0.1",
-  "description": "gave you some useful functions",
+  "description": "gave you some useful functions(utils)",
   "scripts": {
     "start": "per-env",
     "start:production": "npm run -s serve",
