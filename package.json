@@ -1,13 +1,10 @@
 {
   "name": "mytils",
-  "version": "0.0.2",
+  "version": "0.0.21",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
-    "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
-    "serve": "preact build && sirv build --port 8080 --cors --single",
     "dist": "rollup -c",
     "dev": "preact watch",
     "doc": "npx docsify serve docs",
@@ -74,6 +71,7 @@
   ],
   "main": "dist/lib/mytils.js",
   "module": "dist/es/mytils.js",
+  "unpkg": "dist/umd/mytils.min.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist",
