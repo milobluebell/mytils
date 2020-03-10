@@ -27,6 +27,8 @@ import { countdownFromNow } from 'mytils';
 countdownFromNow(2398348800, '{y}年{m}月{d}天'); // 25年09月22天
 ```
 
-> 参数 format 为 object 类型时，请参考 <a href="/#/doc/time/countdown?id=代码示例">countdown 函数的该部分说明</a> 。
+#### 附加说明
 
-!> 时间-索引（{m}、{h}等）对应关系与<a href="/#/doc/time/countdown?id=附加说明">countdown</a>函数相同
+!> 参数 format 为 object 类型时，请参考[countdown 函数的该部分说明](/doc/time/countdown?id=代码示例)
+
+!> 时间-索引（{m}、{h}等）对应关系与[countdown](/doc/time/countdown?id=附加说明)函数相同

@@ -27,6 +27,8 @@ import { countdownFromDuration } from 'mytils';
 countdownFromDuration(6124, '{d}天{h}小时{m}分钟{s}秒'); // 00天01小时42分钟04秒
 ```
 
-> 参数 format 为 object 类型时，请参考 <a href="/#/doc/time/countdown?id=代码示例">countdown 函数的该部分说明</a> 。
+#### 附加说明
 
-!> 时间-索引（{m}、{h}等）对应关系与<a href="/#/doc/time/countdown?id=附加说明">countdown</a>函数相同
+!> 参数 format 为 object 类型时，请参考[countdown 函数的该部分说明](/doc/time/countdown?id=代码示例)
+
+!> 时间-索引（{m}、{h}等）对应关系与[countdown](/doc/time/countdown?id=附加说明)函数相同
