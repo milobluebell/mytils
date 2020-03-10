@@ -1,15 +1,15 @@
-## Funs
+## mytils
 
 gave you some useful functions.
 
 ### 安装 Install
 
 ```
-npm install funs
+npm install mytils
 ```
 
 or
 
 ```
-yarn add funs
+yarn add mytils
 ```

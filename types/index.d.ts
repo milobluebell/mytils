@@ -1,2 +1,2 @@
 declare module '*.json';
-declare const funs:any;
+declare const mytils: any;

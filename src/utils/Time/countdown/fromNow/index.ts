@@ -1,4 +1,4 @@
-import countdown from './../countdown';
+import countdown from '..';
 
 /**
  * 

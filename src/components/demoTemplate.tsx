@@ -2,7 +2,7 @@ import { FunctionalComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Button } from './button';
 import translateInputValue from 'src/utils/Translate/translateInputValue';
-import getDataType from 'src/utils/Calc/dataType';
+import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
   method: () => any;

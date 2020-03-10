@@ -2,11 +2,6 @@
 - 文档
   - 时间
     - [formatTime](/doc/time/formatTime)
-  - URL
-    - [getParamsFromUrl](/doc/url/getParamsFromUrl)
-  - 判断
-    - [isTel](/doc/isX/isTel)
-    - [isEmail](/doc/isX/isEmail)
-  - 计算
-    - [stringLength](/doc/calc/stringLength)
-    - [getRatio]
+    - [countdown](/doc/time/countdown)
+    - [countdowFromNow](/doc/time/countdownFromNow)
+    - [countdowFromDuration](/doc/time/countdownFromDuration)
