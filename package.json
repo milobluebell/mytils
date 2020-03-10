@@ -72,7 +72,6 @@
     "nodeJs",
     "functions"
   ],
-  "unpkg": "dist/umd/mytils.js",
   "main": "dist/lib/mytils.js",
   "module": "dist/es/mytils.js",
   "types": "dist/types/index.d.ts",
