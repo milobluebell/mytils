@@ -1,6 +1,6 @@
 {
-  "name": "funs",
-  "short_name": "funs",
+  "name": "mytils",
+  "short_name": "mytils",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

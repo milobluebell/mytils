@@ -1,7 +1,7 @@
 {
   "name": "mytils",
   "version": "0.0.2",
-  "description": "gave you some useful functions(utils)",
+  "description": "useful utils",
   "scripts": {
     "start": "per-env",
     "start:production": "npm run -s serve",
@@ -66,25 +66,18 @@
     "ts-loader": "^6.2.1",
     "typescript": "~3.7.4"
   },
-  "author": "milo",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/milobluebell/funs/issues"
-  },
-  "homepage": "https://github.com/milobluebell/funs#readme",
   "keywords": [
     "javascript",
     "utils",
     "nodeJs",
     "functions"
   ],
-  "unpkg": "dist/umd/funs.js",
-  "main": "dist/lib/funs.js",
-  "module": "dist/es/funs.js",
+  "unpkg": "dist/umd/mytils.js",
+  "main": "dist/lib/mytils.js",
+  "module": "dist/es/mytils.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist",
-    "es",
     "LICENSE"
   ],
   "husky": {
@@ -133,6 +126,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/milobluebell/funs.git"
-  }
+    "url": "git+https://github.com/milobluebell/mytils.git"
+  },
+  "contributors": [
+    "Milo Ma <milobluebell@gmail.com> (https://github.com/milobluebell)"
+  ],
+  "author": "milo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/milobluebell/mytils/issues"
+  },
+  "homepage": "https://github.com/milobluebell/mytils#readme"
 }

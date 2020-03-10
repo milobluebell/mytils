@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { uniTime, makeupWithO } from './../aux';
+import { uniTime, formattedCountdown } from './../aux';
 import _ from 'lodash';
 
 /**
@@ -12,8 +12,6 @@ import _ from 'lodash';
 */
 // @desc 指定的是小于这个时间(s)的时候的展示格式
 export const formatMap = {
-  // 1min以内
-  [`${60 * 1}s`]: '{m}:{s}',
   // 1小时以内
   [`${60 * 60}s`]: '{m}:{s}',
   // 24h以内
@@ -22,7 +20,7 @@ export const formatMap = {
   [`${60 * 60 * 72}s`]: '{d}:{h}:{m}:{s}',
 }
 const countdown = ($startAt: number, $endAt: number, formatter?: string | object) => {
-  const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : null) || formatMap;
+  const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const startAt = moment(uniTime($startAt)), endAt = moment(uniTime($endAt));
   if (startAt.isSameOrBefore(endAt)) {
     const gutter = endAt.diff(startAt);
@@ -33,21 +31,8 @@ const countdown = ($startAt: number, $endAt: number, formatter?: string | object
     let rangeIndex = _.findIndex(mapKeysNums, item => (item * 1000 >= gutter));
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
-    const duration = moment.duration(gutter);
-    const replacements = [
-      { reg: /\{w+\}/g, text: 'weeks' },
-      { reg: /\{d+\}/g, text: 'days' },
-      { reg: /\{h+\}/g, text: 'hours' },
-      { reg: /\{m+\}/g, text: 'minutes' },
-      { reg: /\{s+\}/g, text: 'seconds' },
-    ]
-    const result = replacements.reduce((prev, curr) => {
-      return prev += theFormat.replace(curr.reg, makeupWithO(duration[curr.text]()));
-    }, '');
-    return result;
-  } else {
-    throw new Error('start time must be earlier, but end time was');
-  }
+    return formattedCountdown(gutter, theFormat);
+  } else throw new Error('start time should be earlier, but end time was');
 }
 
 export default countdown;
