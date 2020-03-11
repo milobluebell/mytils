@@ -1,7 +1,8 @@
 - [开始](/)
+
 - 文档
+
   - 时间
-    - [formatTime](/doc/time/formatTime)
-    - [countdown](/doc/time/countdown)
-    - [countdowFromNow](/doc/time/countdownFromNow)
-    - [countdowFromDuration](/doc/time/countdownFromDuration)
+    - [countdown](doc/time/countdown)
+    - [countdowFromNow](doc/time/countdownFromNow)
+    - [countdowFromDuration](doc/time/countdownFromDuration)

@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <title>mytils</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="some useful functions" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css" />
-    <style>
-      /* it will be used when theme customed, but not for default themes */
-      /* https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css */
-      :root {
-        --base-font-size: 16px;
-        --content-max-width: 70em;
-        --code-font-size: calc(var(--font-size-m) * 0.9);
-        --link-text-decoration: none;
-        --link-text-decoration--hover: none;
-        --blockquote-font-style: italic;
-        --sidebar-nav-link-color--hover: var(--blockquote-border-color);
-        --sidebar-nav-link-text-decoration--hover: none;
-        --sidebar-nav-link-font-weight: bold;
-        --sidebar-nav-link-font-weight--active: bold;
-        --copycode-background: black;
-        --copycode-color: white;
-      }
-    </style>
-  </head>
 
-  <body>
-    <nav>
-      <a href="https://github.com/milobluebell/mytils/issues" target="_blank">Issue</a>
-    </nav>
-    <div id="app"></div>
-    <script>
-      window.$docsify = {
-        name: '📖 mytils',
-        repo: 'https://github.com/milobluebell/mytils',
-        // routerMode: 'history',
-        copyCode: {
-          buttonText: '复制代码',
-          errorText: '发生错误',
-          successText: '已复制',
-        },
-        loadSidebar: true,
-        loadSidebar: '_sidebar.md',
-        alias: {
-          '/.*/_sidebar.md': '/_sidebar.md',
-        },
-        subMaxLevel: 3,
-        auto2top: true,
-        mergeNavbar: true,
-        executeScript: true,
-      };
-    </script>
-    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-    <script src="//unpkg.com/docsify-copy-code"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>mytils</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="some useful functions" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css" />
+  <style>
+    /* it will be used when theme customed, but not for default themes */
+    /* https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css */
+    :root {
+      --base-font-size: 16px;
+      --content-max-width: 70em;
+      --code-font-size: calc(var(--font-size-m) * 0.9);
+      --link-text-decoration: none;
+      --link-text-decoration--hover: none;
+      --blockquote-font-style: italic;
+      --sidebar-nav-link-color--hover: var(--blockquote-border-color);
+      --sidebar-nav-link-text-decoration--hover: none;
+      --sidebar-nav-link-font-weight: bold;
+      --sidebar-nav-link-font-weight--active: bold;
+      --copycode-background: black;
+      --copycode-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="https://github.com/milobluebell/mytils/issues" target="_blank">Issue</a>
+  </nav>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '🌾 mytils',
+      repo: 'https://github.com/milobluebell/mytils',
+      copyCode: {
+        buttonText: '复制代码',
+        errorText: '发生错误',
+        successText: '已复制',
+      },
+      loadSidebar: true,
+      loadSidebar: '_sidebar.md',
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      subMaxLevel: 4,
+      auto2top: true,
+      mergeNavbar: true,
+      executeScript: true,
+    };
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+</body>
+
 </html>
