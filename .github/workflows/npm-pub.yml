@@ -2,8 +2,8 @@ name: publish action
 
 on:
   push:
-    branches:
-      - dev
+    tags:
+    - 'v*'
 
 jobs:
   publish: 
@@ -34,7 +34,7 @@ jobs:
         run: npm run dist
         env:
           CI: true
-          
+
       - name: npm publish
         uses: JS-DevTools/npm-publish@v1
         with:
