@@ -1,0 +1,46 @@
+name: publish action
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  prepare: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@master
+
+      - name: setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@master
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm install
+        run: |
+          npm ci
+          npm install
+        env:
+          CI: true
+
+  test: 
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - name: unit test
+        run: npm run test
+        env:
+          CI: true
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: npm publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
