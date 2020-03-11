@@ -5,10 +5,10 @@ import _ from 'lodash';
 /**
 * 
 * @func   倒计时 (两个指定时间)
-* @param  $startAt  number(unix_time) 倒计时开始的时间
-* @param  $endAt    number(unix_time) 倒计时结束的时间
-* @param  formatter string
-* @return           string
+* @param  $startAt*  number(unix_time) 倒计时开始的时间
+* @param  $endAt*    number(unix_time) 倒计时结束的时间
+* @param  formatter  string
+* @return            string
 */
 // @desc 指定的是小于这个时间(s)的时候的展示格式
 export const formatMap = {

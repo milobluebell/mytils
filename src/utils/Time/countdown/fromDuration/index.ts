@@ -5,9 +5,9 @@ import { formattedCountdown } from './../../aux'
 /**
  * 
  * @func   倒计时 (从现在开始到指定时间)
- * @param  $duration  number(s) 持续时间（单位为s）
- * @param  formatter  string
- * @return            string
+ * @param  $duration*  number(s) 持续时间（单位为s）
+ * @param  formatter*  string
+ * @return             string
  */
 export const countdownFromDuration = ($duration: number, formatter?: string[]) => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
