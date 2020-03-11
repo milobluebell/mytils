@@ -6,7 +6,7 @@ on:
       - dev
 
 jobs:
-  prepare: 
+  publish: 
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -25,19 +25,16 @@ jobs:
         env:
           CI: true
 
-  test: 
-    needs: prepare
-    runs-on: ubuntu-latest
-    steps:
       - name: unit test
         run: npm run test
         env:
           CI: true
 
-  publish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
+      - name: build dist
+        run: npm run dist
+        env:
+          CI: true
+          
       - name: npm publish
         uses: JS-DevTools/npm-publish@v1
         with:
