@@ -1,6 +1,6 @@
 # 开始
 
-<img alt="version" src="https://badgen.net/npm/v/mytils?color=42b983">
+<img alt="version" src="https://img.shields.io/npm/v/mytils?color=42b983">
 <img alt="version" src="https://img.shields.io/badge/gzip-1.16%20kB-44cc11.svg?color=42b983">
 
 > **mytils** 是前端开发中，常用到的一些方法的集合。
