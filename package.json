@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
@@ -13,14 +13,14 @@
     "pretty-quick": "pretty-quick"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
     "moment": "^2.24.0",
     "validator": "^12.2.0"
   },
   "peerDependencies": {
     "moment": "^2.24.0",
-    "lodash": "^4.17.15",
-    "validator": "^12.2.0"
+    "validator": "^12.2.0",
+    "lodash-es": "^4.17.15"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -31,7 +31,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@rollup/plugin-replace": "^2.3.1",
     "@types/jest": "^25.1.2",
-    "@types/lodash": "^4.14.149",
+    "@types/lodash-es": "^4.17.3",
     "@types/webpack-env": "^1.15.1",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
@@ -70,9 +70,9 @@
     "functions"
   ],
   "main": "dist/lib/mytils.js",
-  "module": "dist/es/mytils.js",
+  "module": "dist/es",
   "unpkg": "dist/umd/mytils.min.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/utils/index.d.ts",
   "files": [
     "dist",
     "LICENSE"
