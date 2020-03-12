@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { uniTime, formattedCountdown } from './../aux';
-import _ from 'lodash';
+import { sortBy, findIndex } from 'lodash-es';
 
 /**
 * 
@@ -24,11 +24,11 @@ const countdown = ($startAt: number, $endAt: number, formatter?: string | object
   const startAt = moment(uniTime($startAt)), endAt = moment(uniTime($endAt));
   if (startAt.isSameOrBefore(endAt)) {
     const gutter = endAt.diff(startAt);
-    const mapKeysNums = _.sortBy(Object.keys(configuredFormat).map(item => {
+    const mapKeysNums = sortBy(Object.keys(configuredFormat).map(item => {
       const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''));
       return boundaryTime;
     }));
-    let rangeIndex = _.findIndex(mapKeysNums, item => (item * 1000 >= gutter));
+    let rangeIndex = findIndex(mapKeysNums, item => (item * 1000 >= gutter));
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown(gutter, theFormat);

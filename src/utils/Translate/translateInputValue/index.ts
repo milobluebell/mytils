@@ -1,11 +1,12 @@
 import isNumeric from 'validator/es/lib/isNumeric';
-import isJSON from 'validator/es/lib/isJSON';
 import Regs from 'src/utils/Regs/regs';
 
 /**
  * 
- * @param string 接受一个string入参，一般来自<input/>
  * @func 根据input标签输入的内容，自动转换成javascript对应的数据类型。否则会被默认为string。
+ * @param    string    接受一个string入参，一般来自<input/>
+ * @returns  unknown   视输入情况（具体参见文档：）
+ * // TODO：补充文档和url
  */
 const translateInputValue = (_string: string) => {
   if (typeof _string !== 'string') {

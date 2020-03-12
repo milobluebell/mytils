@@ -8,13 +8,6 @@ const fs = require('fs');
 
 const packageJson = require('./package.json');
 const srcDir = 'src';
-// const utilNames = fs.readdirSync(path.resolve(`${srcDir}/utils`));
-// const utilMaps = utilNames.filter((item) => fs.lstatSync(`${path.resolve(srcDir + '/utils')}/${item}`).isDirectory());
-// const utils = utilMaps.reduce((prev, name) => {
-//   prev[name] = `${srcDir}/utils/${name}/index.ts`;
-//   return prev;
-// }, {});
-// utils['index'] = `${srcDir}/utils/index.ts`;
 
 const basicConfig = function (type = 'es') {
   return {
@@ -26,11 +19,11 @@ const basicConfig = function (type = 'es') {
       exports: 'named',
       globals: {
         'moment': 'moment',
-        '_': 'lodash',
+        '_': 'lodash-es',
       },
-    }, type === 'es' ?
-      { file: packageJson.module, } : type === 'cjs' ?
-        { file: packageJson.main, } : {
+    }, type === 'es' ? { dir: packageJson.module, } :
+      type === 'cjs' ? { file: packageJson.main, } :
+        {
           file: packageJson.unpkg,
           name: packageJson.name,
         }),
@@ -64,10 +57,9 @@ const basicConfig = function (type = 'es') {
 //
 export default ['es', 'cjs', 'umd'].map(item => {
   const config = basicConfig(item);
-  // if (item === 'es') {
-  // config.input = `${path.resolve(srcDir)}/utils/**/*.ts`;
-  // config.output['dir'] = packageJson.module;
-  // config.output['entryFileNames'] = `[name]/[name].js`;
-  // }
+  if (item === 'es') {
+    config.input = require('./modules.js');
+    // config.output['entryFileNames'] = `[name].js`;
+  }
   return config;
 });
