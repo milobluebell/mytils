@@ -5,7 +5,7 @@ import translateInputValue from 'src/utils/Translate/translateInputValue';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
-  method: () => any;
+  method?: (data: any) => any;
   params?: any[];
   paramLength?: number;
 }
@@ -47,7 +47,7 @@ const resultStyle = {
   color: `red`,
   marginLeft: 10,
 };
-export const Demo: FunctionalComponent = (props: IDemoProps) => {
+export const Demo: FunctionalComponent<IDemoProps> = (props: IDemoProps) => {
   const [data, setData] = useState(props?.params);
   const [result, setResult] = useState(undefined);
   let params = [];

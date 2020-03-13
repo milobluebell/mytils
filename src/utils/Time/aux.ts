@@ -23,19 +23,19 @@ export const makeupWithO = ($ipt: string | number) => {
 
 // 根据duration和一个确定的format，计算出倒计时
 const replacements = [
-  { reg: /\{y+\}/g, text: 'years' },
-  { reg: /\{M+\}/g, text: 'months' },
-  { reg: /\{w+\}/g, text: 'weeks' },
-  { reg: /\{d+\}/g, text: 'days' },
-  { reg: /\{h+\}/g, text: 'hours' },
-  { reg: /\{m+\}/g, text: 'minutes' },
-  { reg: /\{s+\}/g, text: 'seconds' },
+  { reg: /\{y+\}/g, text: 'years', unsupplementalReg: /\{y\}/g },
+  { reg: /\{M+\}/g, text: 'months', unsupplementalReg: /\{M\}/g },
+  { reg: /\{w+\}/g, text: 'weeks', unsupplementalReg: /\{w\}/g },
+  { reg: /\{d+\}/g, text: 'days', unsupplementalReg: /\{d\}/g },
+  { reg: /\{h+\}/g, text: 'hours', unsupplementalReg: /\{h\}/g },
+  { reg: /\{m+\}/g, text: 'minutes', unsupplementalReg: /\{m\}/g },
+  { reg: /\{s+\}/g, text: 'seconds', unsupplementalReg: /\{s\}/g },
 ]
 export const formattedCountdown = (duration: number, formatter: string) => {
   const _duration = moment.duration(duration);
   let result = formatter;
   replacements.forEach((rule) => {
-    result = result.replace(rule.reg, makeupWithO(_duration[rule.text]()));
+    result = result.replace(rule.unsupplementalReg, _duration[rule.text]()).replace(rule.reg, makeupWithO(_duration[rule.text]()));
   });
   return result;
 } 

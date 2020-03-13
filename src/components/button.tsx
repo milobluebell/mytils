@@ -1,8 +1,8 @@
 import { FunctionalComponent, h } from 'preact';
 
 interface IButtonProps {
-  children: any;
-  onClick: () => void;
+  children?: any;
+  onClick?: () => void;
 }
 //
 const buttonStyle = {
@@ -13,7 +13,7 @@ const buttonStyle = {
   background: `linear-gradient(#53a0d4, #1b5377)`,
   color: `white`,
 };
-export const Button: FunctionalComponent = (props: IButtonProps) => {
+export const Button: FunctionalComponent<IButtonProps> = (props: IButtonProps) => {
   return (
     <button onClick={props?.onClick} style={buttonStyle}>
       <span>{`测试 ${props?.children?.toString()} 方法`}</span>
