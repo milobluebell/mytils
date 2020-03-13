@@ -4,6 +4,6 @@
  * @return   string   'browser' | 'node'
  */
 const getJsEnv = () => {
-  return (typeof window !== 'undefined') && (typeof global === 'undefined') ? 'browser' : 'node';
+  return typeof window === 'object' ? 'browser' : 'node';
 }
 export default getJsEnv;

@@ -11,7 +11,7 @@ import { supplyZero } from '../aux';
 const getNumFromRatio = ($ratio: string, $precision?: number, $supplemental?: boolean) => {
   const theNum = parseFloat($ratio.split('%')[0]);
   const precision = $precision || $ratio.length;
-  const result = round(theNum * 100, precision);
+  const result = round(theNum / 100, precision);
   return $supplemental ? supplyZero(result, precision) : result;
 }
 export default getNumFromRatio;

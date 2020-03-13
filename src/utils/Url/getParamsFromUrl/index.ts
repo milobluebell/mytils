@@ -1,16 +1,15 @@
-import isURL from 'validator/es/lib/isURL';
 import { getParam } from './../aux';
 
 /**
  * 
  * @func     获取url中携带的参数
  * @param    $key*    string | string[]
- * @param    $url     string | string[]
+ * @param    $url     string
  * @returns           string | object | null
  */
 const getParamsFromUrl = ($key: string | string[], $url?: string) => {
   const url = $url || (window?.location ? window.location.href : '');
-  if (!url || !isURL(url)) {
+  if (!url) {
     throw new Error('uri param is invalid or deficient');
   } else {
     const windowLocationSearch = url.substr(url.indexOf('?'));
