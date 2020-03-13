@@ -1,7 +1,7 @@
 
 /**
  * 
- * @param   param 
+ * @param   param
  * @func    判断参数的数据类型
  * @return  string 值枚举就是types_zh中key的枚举
  */

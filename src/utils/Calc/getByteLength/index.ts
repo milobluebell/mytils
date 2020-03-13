@@ -3,13 +3,14 @@ import getJsEnv from './../getJsEnv';
 /**
  * 
  * @func 计算字符串的字节长度
- * @param $string 
+ * @param $string  string
+ * @return         number
  */
 const getByteLength = ($string: string) => {
   if (getJsEnv() === 'node') {
-    return new Buffer($string).length
+    return new Buffer($string).length;
   } else {
-    return new Blob([$string]).size
+    return new Blob([$string]).size;
   }
 }
 export default getByteLength;

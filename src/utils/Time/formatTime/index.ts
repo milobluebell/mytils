@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { uniTime } from './../aux';
 
 /**
  * 
@@ -7,18 +8,5 @@ import moment from 'moment';
  * @param  formatter  string
  * @return            string
  */
-const formatUnixTime = (time: number, formatter = 'YYYY/MM/DD HH:mm:ss') => {
-  let momentedTime = null;
-  if (time) {
-    if (time.toString().length === 10) {
-      momentedTime = moment(time * 1000).format(formatter);
-    }
-    if (time.toString().length === 13) {
-      momentedTime = moment(time).format('YYYY/MM/DD HH:mm:ss');
-    }
-    return momentedTime || 'Invalid date';
-  } else {
-    return '--';
-  }
-};
+const formatUnixTime = (time: number, formatter = 'YYYY/MM/DD HH:mm:ss') => moment(uniTime(time)).format(formatter);
 export default formatUnixTime;
