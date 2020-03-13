@@ -8,13 +8,15 @@ import { supplyZero } from '../aux';
  * @param $precision  number   精度(小数点后位数)
  * @param $precision  boolean  是否补位，比如translateIntoRatio(0.24, 2, false)为24%,
  *                                        translateIntoRatio(0.24, 2, true)则为24.00%
+ * @return            number
  */
 const maxPrecisionBoundary = 6;
-const translateIntoRatio = ($number: number, $precision?: number, $supplemental?: boolean) => {
+const getRatioFromNum = ($number: number, $precision?: number, $supplemental?: boolean) => {
   if ($precision && ($precision < 0 - maxPrecisionBoundary || $precision > maxPrecisionBoundary)) {
-    console.warn(`$precision was too ${$precision < 0 ? 'low' : 'high'} that makes no sense`);
+    console.warn(`precision was too ${$precision < 0 ? 'low' : 'high'} to makes sense`);
   }
-  const result = round($number * 100, $precision)
-  return `${$supplemental ? supplyZero(result, $precision) : result}%`;
+  const precision = $precision || $number.toString().length;
+  const result = round($number * 100, precision)
+  return `${$supplemental ? supplyZero(result, precision) : result}%`;
 }
-export default translateIntoRatio;
+export default getRatioFromNum;

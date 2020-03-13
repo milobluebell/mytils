@@ -5,5 +5,6 @@ const Regs = {
   objectLike: /^(\[|\{)(\w:\S*|\S)*(\]|\})$/,
   regExpLike: /^\/.+\/$/,
   stringLike: /^(\'|\"|\`).+(\'|\"|\`)$/,
+  zhChar: //,
 }
 export default Regs;
