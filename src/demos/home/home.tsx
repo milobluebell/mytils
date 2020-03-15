@@ -16,9 +16,12 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
+  console.log(getDataType(NaN));
   return (
     <div>
-      <h2 style={hStyle}>mytils demos</h2>
+      <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
+
+      {/* demos */}
       <Demo params={[1]} method={translateInputValue}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
       <Demo params={[1583825398, 1583825798]} method={countdown}></Demo>
@@ -29,6 +32,7 @@ const Home: FunctionalComponent = () => {
       <Demo params={['24%', 3, true]} method={getNumFromRatio}></Demo>
       <Demo params={[2398348800, 'YYYY/MM/DD HH:mm:ss']} method={formatUnixTime}></Demo>
       <Demo params={['麻麻，我想吃烤山药']} method={getByteLength}></Demo>
+      {/* end of demos */}
     </div>
   );
 };

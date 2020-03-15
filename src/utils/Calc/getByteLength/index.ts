@@ -1,5 +1,4 @@
 import getJsEnv from './../getJsEnv';
-import Regs from 'src/utils/Regs/regs';
 
 /**
  * 
@@ -9,7 +8,7 @@ import Regs from 'src/utils/Regs/regs';
  */
 const getByteLength = ($string: string) => {
   if (typeof $string === 'string') {
-    if (/^[a-zA-Z0-9]*$/g.test($string)) {
+    if ($string.split('').every(item => item.charCodeAt(0) <= 255)) {
       return $string.length;
     } else {
       if (getJsEnv() === 'node') {

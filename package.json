@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "0.0.63",
+  "version": "0.0.7",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
@@ -9,7 +9,7 @@
     "dev": "preact watch",
     "doc": "npx docsify serve docs",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
-    "test": "jest ./tests",
+    "test": "jest ./src",
     "pretty-quick": "pretty-quick"
   },
   "dependencies": {
