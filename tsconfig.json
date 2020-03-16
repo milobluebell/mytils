@@ -19,7 +19,6 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "project/*": ["/*"],
       "src/*": ["src/*"],
     },
     "forceConsistentCasingInFileNames": true,
@@ -33,10 +32,10 @@
     "node_modules",
     "dist",
     "lib",
-    "es"
+    "es",
+    "tests/*.ts",
   ],
   "include": [
     "**/*.ts",
-    "**/*.tsx",
   ]
 }
