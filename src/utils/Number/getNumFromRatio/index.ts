@@ -9,9 +9,11 @@ import { supplyZero } from '../aux';
  * @return            number
  */
 const getNumFromRatio = ($ratio: string, $precision?: number, $supplemental?: boolean) => {
-  const theNum = parseFloat($ratio.split('%')[0]);
-  const precision = $precision || $ratio.length;
-  const result = round(theNum / 100, precision);
-  return $supplemental ? supplyZero(result, precision) : result;
+  if ($ratio.includes('%')) {
+    const theNum = parseFloat($ratio.split('%')[0]);
+    const precision = $precision || $ratio.length;
+    const result = round(theNum / 100, precision);
+    return $supplemental ? supplyZero(result, precision) : result;
+  } else throw new Error(`ratio param should include '%' character`);
 }
 export default getNumFromRatio;
