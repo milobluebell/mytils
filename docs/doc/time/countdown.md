@@ -1,4 +1,4 @@
-# countdownt
+# countdown
 
 > 计算两个 unix 时间之间的倒计时。
 
