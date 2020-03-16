@@ -14,19 +14,19 @@ describe('getNumFromRatio', function () {
     expect(getNumFromRatio(ratio)).toBe(0.66);
   });
 
-  // with precision
+  // 正数精确度
   it('used with pricision in a positive number', function () {
     const ratio = `25.45%`; // 0.2545
     expect(getNumFromRatio(ratio, 3)).toBe(0.255);
   });
   
-  // with precision
+  // 
   it('used with pricision in a negative number and supply zero', function () {
     const ratio = `25.45%`;// 0.2545
     expect(getNumFromRatio(ratio, 6)).toBe(0.254500);
   });
 
-  // with precision
+  // 负数精确度
   it('used with pricision in a negative number', function () {
     const ratio = `255555%`; // 2555.55
     expect(getNumFromRatio(ratio, -2)).toBe(2600);
