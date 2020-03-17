@@ -9,7 +9,7 @@ import { formattedCountdown } from './../../aux'
  * @param  formatter*  string
  * @return             string
  */
-export const countdownFromDuration = ($duration: number, formatter?: string[]) => {
+export const countdownFromDuration = ($duration: number, formatter?: string | object) => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const duration = $duration.toString();
   if ($duration >= 0 && /^[0-9]+$/.test(duration)) {
