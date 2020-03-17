@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "0.0.65",
+  "version": "0.0.7",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
@@ -73,12 +73,11 @@
   "main": "dist/lib/mytils.js",
   "module": "dist/es",
   "unpkg": "dist/umd/mytils.min.js",
-  "types": "dist/types/utils/index.d.ts",
+  "types": "dist/types/src/utils/index.d.ts",
   "files": [
     "dist",
     "LICENSE"
   ],
-  "sideEffects": false,
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",

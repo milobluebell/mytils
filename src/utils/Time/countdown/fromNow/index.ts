@@ -7,5 +7,5 @@ import countdown from '..';
  * @param  formatter  string
  * @return            string  
  */
-export const countdownFromNow = ($endAt: number, formatter?: string[]) => countdown(new Date().getTime(), $endAt, formatter);
+export const countdownFromNow = ($endAt: number, formatter?: string | object) => countdown(new Date().getTime(), $endAt, formatter);
 export default countdownFromNow;
