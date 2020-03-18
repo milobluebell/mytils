@@ -16,12 +16,14 @@
 /out/
 
 # production
-/build
+/build 
+/undefined
 /pages/docs/*
 */**/dll/*
 
 # dist
 /dist
+/es
 *.tgz
 
 # debug
