@@ -25,7 +25,7 @@ const Home: FunctionalComponent = () => {
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
       <Demo params={[1583825398, 1583825798]} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownFromNow}></Demo>
-      <Demo params={[6124, '{d}天,{h}小时{m}分钟{s}秒']} method={countdownFromDuration}></Demo>
+      <Demo params={[216124]} method={countdownFromDuration}></Demo>
       <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080/?test=1234&test2=51']} method={getParamsFromUrl}></Demo>
       <Demo params={[0.24, 2, true]} method={getRatioFromNum}></Demo>
       <Demo params={['24%', 3, true]} method={getNumFromRatio}></Demo>
