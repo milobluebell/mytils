@@ -70,12 +70,13 @@
     "nodeJs",
     "functions"
   ],
-  "main": "dist/lib/mytils.js",
-  "module": "dist/es",
+  "main": "dist/lib/index.js",
+  "module": "es/index.js",
   "unpkg": "dist/umd/mytils.min.js",
   "types": "dist/types/src/utils/index.d.ts",
   "files": [
     "dist",
+    "es",
     "LICENSE"
   ],
   "husky": {
