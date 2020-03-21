@@ -1,5 +1,5 @@
 import countdown from '../index';
-import { stringFormatter, objFormatter } from './../fromDuration/__tests__';
+import { stringFormatter, objFormatter } from '../fromDuration/__tests__/index.test';
 
 describe('countdown', function() {
   const normalTestDesc = `calculated gutter was smaller than`;
@@ -42,7 +42,7 @@ describe('countdown', function() {
       startAt: 1577812953,
       endAt: 1577812953 + 60 * 60 * 25 + 10,
       formatter: stringFormatter,
-      toBe: `0:25:00:10`,
+      toBe: `1:01:00:10`,
     },
     {
       moreDesc: `1 min with configured object formatter`,
@@ -63,13 +63,12 @@ describe('countdown', function() {
       startAt: 1577812953,
       endAt: 1577812953 + 150,
       formatter: objFormatter,
-      toBe: `03:30`,
+      toBe: `02:30`,
     },
   ];
 
   testers.forEach((rule: any) => {
     it(`${normalTestDesc} ${rule.moreDesc}`, function() {
-      const duration = rule.duration;
       expect(countdown(rule.startAt, rule.endAt, rule?.formatter)).toBe(rule.toBe);
     });
   });

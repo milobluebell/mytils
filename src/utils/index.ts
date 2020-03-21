@@ -12,7 +12,7 @@ export { default as getByteLength } from './Calc/getByteLength';
 export { default as getParamsFromUrl } from './Url/getParamsFromUrl';
 
 // Translate
-export { default as translateInputValue } from './Translate/translateInputValue';
+export { default as encodeObject } from './Translate/encodeObject';
 
 // Number
 export { default as getRatioFromNum } from './Number/getRatioFromNum';
