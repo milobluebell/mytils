@@ -1,7 +1,7 @@
 import { FunctionalComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Button } from './button';
-import translateInputValue from 'src/utils/Translate/translateInputValue';
+import encodeObject from 'src/utils/Translate/encodeObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
@@ -80,7 +80,7 @@ export const Demo: FunctionalComponent<IDemoProps> = (props: IDemoProps) => {
       ))}
       <Button
         onClick={() => {
-          const newData = data.map((item) => translateInputValue(item));
+          const newData = data.map((item) => encodeObject(item, true));
           setData(newData);
           setResult(data.length === 1 ? props.method(data[0]) : props.method(...data));
         }}>

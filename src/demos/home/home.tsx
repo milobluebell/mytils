@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Demo } from 'src/components/demoTemplate';
-import translateInputValue from 'src/utils/Translate/translateInputValue';
+import encodeObject from 'src/utils/Translate/encodeObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 import countdown from 'src/utils/Time/countdown';
 import countdownFromNow from 'src/utils/Time/countdown/fromNow';
@@ -21,7 +21,7 @@ const Home: FunctionalComponent = () => {
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
 
       {/* demos */}
-      <Demo params={[1]} method={translateInputValue}></Demo>
+      <Demo params={[1, true]} method={encodeObject}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
       <Demo params={[1583825398, 1583825798]} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownFromNow}></Demo>
