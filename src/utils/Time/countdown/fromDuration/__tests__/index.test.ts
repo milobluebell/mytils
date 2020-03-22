@@ -61,7 +61,7 @@ describe('countdownFromDuration', function() {
       moreDesc: `3 min with configured object formatter`,
       duration: 3 * 60 - 1,
       formatter: objFormatter,
-      toBe: `0:0:0, 00:2:59`,
+      toBe: `0:0:0, 00:02:59`,
     },
   ];
 
