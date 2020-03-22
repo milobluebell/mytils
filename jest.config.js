@@ -11,4 +11,6 @@ module.exports = {
   moduleNameMapper: {
     '^lodash-es$': 'lodash',
   },
+  coverageDirectory: './coverage/',
+  collectCoverage: true,
 };
