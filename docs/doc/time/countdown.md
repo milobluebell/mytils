@@ -64,3 +64,20 @@ countdown(1583825398, 1584080998, formatMap); // 02天23小时,00:00
 | {m}  | 分钟 | 不补 0，例如：`{m}min`->`9min` |
 | {mm} | 分钟 | 补 0，例如：`{mm}min`->`09min` |
 | {s}  |  秒  | 同上                           |
+
+!> countdown[From...] 系列函数对应“时间-解析”的各位输出内容是“该位的值”，而不是“精确到该位”，举个例子：
+
+```js
+import { countdown } from 'mytils';
+import { countdownFromDuration } from 'mytils';
+
+const startAt = 2398348861;
+const endAt = 3379424523;
+
+countdown(2398348861, 3379424523, '{y}年{M}月{d}天, {hh}:{mm}:{ss}'); // 没有任何疑问的：31年1月2天, 01:01:02
+countdown(2398348861, 3379424523, '{d}天, {hh}:{mm}:{ss}'); // 结果是：2天, 01:01:02 ，而不是 11377天, 01:01:02
+
+// 相类似地，countdownFromDuration方法也一样：
+countdownFromDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒
+countdownFromDuration(3 * 25 * 60 * 60, '{h}小时{mm}分钟{ss}'); // 结果是 3小时00分钟00，而不是75小时00分钟00
+```

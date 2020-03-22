@@ -27,8 +27,14 @@ jobs:
 
       - name: unit test
         run: npm run test
-        env:
+        env: 
           CI: true
+
+      - name: report codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
 
       - name: build dist
         run: npm run dist

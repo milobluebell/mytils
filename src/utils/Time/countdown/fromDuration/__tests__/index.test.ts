@@ -7,7 +7,7 @@ export const objFormatter = {
   // 2min以内
   [`${2 * 60}s`]: '{m}:{s}',
   // 3min以内
-  [`${3 * 60}s`]: '{mm}:{ss}',
+  [`${3 * 60}s`]: '{y}:{M}:{d}, {hh}:{mm}:{ss}',
 };
 describe('countdownFromDuration', function() {
   const normalTestDesc = `duration was smaller than`;
@@ -61,7 +61,7 @@ describe('countdownFromDuration', function() {
       moreDesc: `3 min with configured object formatter`,
       duration: 3 * 60 - 1,
       formatter: objFormatter,
-      toBe: `02:59`,
+      toBe: `0:0:0, 00:2:59`,
     },
   ];
 
