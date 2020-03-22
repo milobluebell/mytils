@@ -16,6 +16,7 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
+  console.log(countdownFromDuration(3 * 25 * 60 * 60, '{h}:{mm}:{ss}'));
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
@@ -23,7 +24,7 @@ const Home: FunctionalComponent = () => {
       {/* demos */}
       <Demo params={[1, true]} method={encodeObject}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
-      <Demo params={[1583825398, 1583825798]} method={countdown}></Demo>
+      <Demo params={[2398348861, 3379424523, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownFromNow}></Demo>
       <Demo params={[216124]} method={countdownFromDuration}></Demo>
       <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080/?test=1234&test2=51']} method={getParamsFromUrl}></Demo>

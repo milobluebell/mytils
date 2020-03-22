@@ -63,7 +63,7 @@ describe('countdown', function() {
       startAt: 1577812953,
       endAt: 1577812953 + 150,
       formatter: objFormatter,
-      toBe: `02:30`,
+      toBe: `0:0:0, 00:02:30`,
     },
   ];
 

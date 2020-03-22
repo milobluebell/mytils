@@ -5,6 +5,7 @@
   - 计算
 
     - [getByteLength](doc/calc/getByteLength)
+    - [getDataType](doc/calc/getDataType)
 
   - 时间
 
@@ -18,5 +19,11 @@
     - [getParamsFromUrl](doc/url/getParamsFromUrl)
 
   - Number
+
     - [getRatioFromNum](doc/number/getRatioFromNum)
     - [getNumFromRatio](doc/number/getNumFromRatio)
+
+  - 转义
+    - [decodeUTF8](doc/translate/decodeUTF8)
+    - [encodeUTF8](doc/translate/encodeUTF8)
+    - [encodeObject](doc/translate/encodeObject)

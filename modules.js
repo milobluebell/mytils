@@ -21,4 +21,9 @@ module.exports = {
   // Number
   getRatioFromNum: 'src/utils/Number/getRatioFromNum',
   getNumFromRatio: 'src/utils/Number/getNumFromRatio',
+
+  // Translate
+  decodeUTF8: 'src/utils/Translate/decodeUTF8',
+  encodeUTF8: 'src/utils/Translate/encodeObject',
+  encodeObject: 'src/utils/Translate/encodeObject',
 };
