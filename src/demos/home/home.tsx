@@ -18,7 +18,6 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
-  console.log(encodeObject(`[1,'2',false]`));
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
