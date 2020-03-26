@@ -9,7 +9,8 @@ export { default as getDataType } from './Calc/getDatatype';
 export { default as getByteLength } from './Calc/getByteLength';
 
 // Url
-export { default as getParamsFromUrl } from './Url/getParamsFromUrl';
+export { default as getQueryParams } from './Url/getQueryParams';
+export { default as getRestParams } from './Url/getRestParams';
 
 // Translate
 export { default as encodeObject } from './Translate/encodeObject';

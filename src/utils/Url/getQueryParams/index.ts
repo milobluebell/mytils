@@ -1,13 +1,13 @@
-import { getParam } from './../aux';
+import { getParam } from '../aux';
 
 /**
- * 
+ *
  * @func     获取url中携带的参数
  * @param    $key*    string | string[]
  * @param    $url     string
  * @returns           string | object | null
  */
-const getParamsFromUrl = ($key: string | string[], $url?: string) => {
+const getQueryParams = ($key: string | string[], $url?: string) => {
   const url = $url || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');
@@ -17,12 +17,12 @@ const getParamsFromUrl = ($key: string | string[], $url?: string) => {
       return getParam($key, windowLocationSearch);
     } else {
       let result = {};
-      $key.forEach(item => {
+      $key.forEach((item) => {
         result[item] = getParam(item, windowLocationSearch);
       });
       return result;
     }
   }
-}
+};
 
-export default getParamsFromUrl;
+export default getQueryParams;

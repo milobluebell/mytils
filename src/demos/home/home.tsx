@@ -5,7 +5,7 @@ import getDataType from 'src/utils/Calc/getDatatype';
 import countdown from 'src/utils/Time/countdown';
 import countdownFromNow from 'src/utils/Time/countdown/fromNow';
 import countdownFromDuration from 'src/utils/Time/countdown/fromDuration';
-import getParamsFromUrl from 'src/utils/Url/getParamsFromUrl';
+import getQueryParams from 'src/utils/Url/getQueryParams';
 import getRatioFromNum from 'src/utils/Number/getRatioFromNum';
 import getNumFromRatio from 'src/utils/Number/getNumFromRatio';
 import formatUnixTime from 'src/utils/Time/formatUnixTime';
@@ -28,7 +28,7 @@ const Home: FunctionalComponent = () => {
       <Demo params={[2398348861, 3379424523, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownFromNow}></Demo>
       <Demo params={[216124]} method={countdownFromDuration}></Demo>
-      <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080/?test=1234&test2=51']} method={getParamsFromUrl}></Demo>
+      <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080/?test=1234&test2=51']} method={getQueryParams}></Demo>
       <Demo params={[0.24, 2, true]} method={getRatioFromNum}></Demo>
       <Demo params={['24%', 3, true]} method={getNumFromRatio}></Demo>
       <Demo params={[2398348800, 'YYYY/MM/DD HH:mm:ss']} method={formatUnixTime}></Demo>
