@@ -12,6 +12,9 @@ const getQueryParams = ($key?: string | string[], $uri?: string) => {
   if (!url) {
     throw new Error('uri param is invalid or deficient');
   } else {
+    if (url.indexOf('?') < 0) {
+      return {};
+    }
     const windowLocationSearch = url.substr(url.indexOf('?'));
     if (typeof $key === 'string') {
       return getQueryParam($key, windowLocationSearch);

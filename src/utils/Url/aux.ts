@@ -24,9 +24,3 @@ export const getAllQueries = ($search: string) => {
     return Object.assign(prev, obj);
   }, {});
 };
-
-const checkSearchArgs = ($search: string) => {
-  if (!$search || $search === '/') {
-    throw new Error('no url search part');
-  } else return $search;
-};
