@@ -13,10 +13,12 @@
 
 #### 返回值
 
-|   输入类型    |   返回值   |
-| :-----------: | :--------: |
-| key 为 string | **string** |
-| key 为 array  | **object** |
+|       输入类型       |   返回值   |
+| :------------------: | :--------: |
+|    key 为 string     | **string** |
+|     key 为 array     | **object** |
+|      key 为 空       | **object** |
+| key 存在，但没有赋值 |   `true`   |
 
 ---
 
@@ -27,9 +29,22 @@
 ```js
 import { getQueryParams } from 'mytils';
 
-// 假设调用页面的浏览器的url是：http://localhost:3000/testRoute?test=a&test2=b
+// 假设调用页面的浏览器的url是：http://localhost:3000/testRoute?test=a&test2=b&test3
 getQueryParams('test'); // 'a'
 getQueryParams(['test', 'test2']); // { test: 'a', test2: 'b' }
+getQueryParams('test3'); // true
+```
+
+> 没有任何参数，或 key 为 undefined：
+
+```js
+import { getQueryParams } from 'mytils';
+
+// 假设调用页面的浏览器的url是：http://localhost:3000/testRoute?test=a&test2=b&test3=c
+const urllikeString = 'http://localhost:3000/testRoute?test=a&test2=b';
+
+getQueryParams(); // {test: 'a', test2: 'b'}
+getQueryParams(undefined, urllikeString); // {test: 'a', test2: 'b', test3: 'c'}
 ```
 
 > 指定的 url：

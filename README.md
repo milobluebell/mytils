@@ -1,6 +1,8 @@
 # [🍀mytils](https://milobluebell.github.io/mytils/#/) &middot; <img alt="version" src="https://img.shields.io/npm/v/mytils?color=42b983"> <img alt="version" src="https://img.shields.io/bundlephobia/minzip/mytils?color=%2342b983"> <img alt="version" src="https://img.shields.io/codacy/grade/29c42e17c0b341099cbc3d552ff6bff6?color=%2342b983">
 
-this is a useful utils.
+![Image text](https://raw.githubusercontent.com/milobluebell/imgs-repo/master/WX20200322-010957%402x.png)
+
+a useful utils.
 
 ## 安装 Install
 
