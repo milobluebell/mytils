@@ -18,4 +18,16 @@ describe('getQueryParams', function() {
     const url = `https://www.test.com/testRoute?testC=e&testD=f`;
     expect(getQueryParams('testE', url)).toBe(null);
   });
+
+  // 匹配到，但是没有指定任何值
+  it(`no comparation of one param key`, () => {
+    const url = `https://www.test.com/testRoute?testF=1&testG`;
+    expect(getQueryParams('testG', url)).toBe(true);
+  });
+
+  // 不传任何参数
+  it(`no $key argument`, () => {
+    const url = `https://www.test.com/testRoute?test=1&test2=12#da`;
+    expect(getQueryParams(undefined, url)).toStrictEqual({ test: '1', test2: '12#da' });
+  });
 });

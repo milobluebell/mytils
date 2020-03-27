@@ -6,6 +6,7 @@ import countdown from 'src/utils/Time/countdown';
 import countdownFromNow from 'src/utils/Time/countdown/fromNow';
 import countdownFromDuration from 'src/utils/Time/countdown/fromDuration';
 import getQueryParams from 'src/utils/Url/getQueryParams';
+import getRestParams from 'src/utils/Url/getRestParams';
 import getRatioFromNum from 'src/utils/Number/getRatioFromNum';
 import getNumFromRatio from 'src/utils/Number/getNumFromRatio';
 import formatUnixTime from 'src/utils/Time/formatUnixTime';
@@ -28,7 +29,9 @@ const Home: FunctionalComponent = () => {
       <Demo params={[2398348861, 3379424523, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownFromNow}></Demo>
       <Demo params={[216124]} method={countdownFromDuration}></Demo>
-      <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080/?test=1234&test2=51']} method={getQueryParams}></Demo>
+      <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080']} method={getQueryParams}></Demo>
+      <Demo params={[]} method={getQueryParams}></Demo>
+      <Demo params={[`/company/{company}/order/detail/{part}`, 'https://192.168.102.11:8080/company/macrohard/order/detail/C##?version=3']} method={getRestParams}></Demo>
       <Demo params={[0.24, 2, true]} method={getRatioFromNum}></Demo>
       <Demo params={['24%', 3, true]} method={getNumFromRatio}></Demo>
       <Demo params={[2398348800, 'YYYY/MM/DD HH:mm:ss']} method={formatUnixTime}></Demo>

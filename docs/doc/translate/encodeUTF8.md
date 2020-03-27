@@ -25,5 +25,5 @@
 ```js
 import { encodeUTF8 } from 'mytils';
 
-decodeUTF8('一给我里，giao,giao！'); // &#x4E00;&#x7ED9;&#x6211;&#x91CC;&#xFF0C;giao,giao&#xFF01;
+encodeUTF8('一给我里，giao,giao！'); // &#x4E00;&#x7ED9;&#x6211;&#x91CC;&#xFF0C;giao,giao&#xFF01;
 ```
