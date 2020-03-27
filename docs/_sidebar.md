@@ -16,7 +16,8 @@
 
   - Url
 
-    - [getParamsFromUrl](doc/url/getParamsFromUrl)
+    - [getQueryParams](doc/url/getQueryParams)
+    - [getRestParams](doc/url/getRestParams)
 
   - Number
 
