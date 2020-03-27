@@ -16,7 +16,8 @@ module.exports = {
   getByteLength: 'src/utils/Calc/getByteLength',
 
   // Url
-  getParamsFromUrl: 'src/utils/Url/getParamsFromUrl',
+  getQueryParams: 'src/utils/Url/getQueryParams',
+  getRestParams: 'src/utils/Url/getRestParams',
 
   // Number
   getRatioFromNum: 'src/utils/Number/getRatioFromNum',
