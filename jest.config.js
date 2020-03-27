@@ -2,7 +2,7 @@ module.exports = {
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
-  verbose: true,
+  verbose: false,
   testURL: 'http://localhost:8080',
   moduleFileExtensions: ['js', 'ts'],
   moduleDirectories: ['node_modules'],
