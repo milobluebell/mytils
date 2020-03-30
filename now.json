@@ -1,0 +1,11 @@
+{
+  "name": "mytils",
+  "version": 2,
+  "github": {
+    "enabled": true
+  },
+  "alias": [
+    "www.mytils.site"
+  ],
+  "regions": ["hnd1", "sfo1"]
+}

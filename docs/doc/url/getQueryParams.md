@@ -35,7 +35,7 @@ getQueryParams(['test', 'test2']); // { test: 'a', test2: 'b' }
 getQueryParams('test3'); // true
 ```
 
-> 没有任何参数，或 key 为 undefined：
+> 没有任何参数时：
 
 ```js
 import { getQueryParams } from 'mytils';
@@ -44,7 +44,6 @@ import { getQueryParams } from 'mytils';
 const urllikeString = 'http://localhost:3000/testRoute?test=a&test2=b';
 
 getQueryParams(); // {test: 'a', test2: 'b'}
-getQueryParams(undefined, urllikeString); // {test: 'a', test2: 'b', test3: 'c'}
 ```
 
 > 指定的 url：
