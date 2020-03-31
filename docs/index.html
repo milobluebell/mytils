@@ -51,9 +51,17 @@
         auto2top: true,
         mergeNavbar: true,
         executeScript: true,
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: 'auto',
+          placeholder: 'Search',
+          noData: '找不到结果',
+          depth: 1,
+        },
       };
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
     <script src="//unpkg.com/docsify-copy-code"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
   </body>
 </html>
