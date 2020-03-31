@@ -18,6 +18,4 @@ npm i mytils --save
 
 本仓库旨在创造一个复用程度高的工具库，省去开发者更多时间，欢迎提供 PR 和提出 Issue。
 
-我们的口号是：
-
-> 回家吃饭
+## 回家吃饭 Less overtime
