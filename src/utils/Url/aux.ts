@@ -1,8 +1,8 @@
-import getDataType from './../../utils/Calc/getDatatype';
+import getDataType from '../../utils/Calc/getDatatype';
 
 // 根据类location.search获取指定的query param
 export const getQueryParam = ($key: string, $search: string) => {
-  let matches = $search.slice(1).match(new RegExp('(^|&)' + $key + '=([^&]*)(&|$)', 'i'));
+  const matches = $search.slice(1).match(new RegExp(`(^|&)${$key}=([^&]*)(&|$)`, 'i'));
   if (matches && getDataType(matches) === 'array') {
     return matches[2];
   } else {
@@ -24,3 +24,5 @@ export const getAllQueries = ($search: string) => {
     return Object.assign(prev, obj);
   }, {});
 };
+
+export type Tparams = 'string' | { [index: string]: string } | {} | string | null;

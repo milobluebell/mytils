@@ -6,6 +6,7 @@ bin/
 coverage/
 *.json
 **/*.json
+**/*.sh
 yarn-error.log
 
 package.json

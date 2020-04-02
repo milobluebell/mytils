@@ -1,4 +1,4 @@
-import { getQueryParam, getAllQueries } from '../aux';
+import { getQueryParam, getAllQueries, Tparams } from '../aux';
 
 /**
  *
@@ -7,7 +7,8 @@ import { getQueryParam, getAllQueries } from '../aux';
  * @param    $uri     string
  * @returns           string | object | null
  */
-const getQueryParams = ($key?: string | string[], $uri?: string) => {
+
+const getQueryParams = ($key?: string | string[], $uri?: URL['href']): Tparams => {
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');
@@ -22,7 +23,7 @@ const getQueryParams = ($key?: string | string[], $uri?: string) => {
       // 如果不传入$key则输出全部查询参数
       return getAllQueries(windowLocationSearch);
     } else {
-      let result = {};
+      const result = {};
       $key.forEach((item) => {
         result[item] = getQueryParam(item, windowLocationSearch);
       });

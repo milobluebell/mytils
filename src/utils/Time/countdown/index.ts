@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { uniTime, formattedCountdown } from './../aux';
 import { sortBy, findIndex } from 'lodash-es';
+import { uniTime, formattedCountdown, IFormatter } from '../aux';
 
 /**
  *
@@ -19,19 +19,19 @@ export const formatMap = {
   // 大于24h，且小于72h
   [`${60 * 60 * 24 * 5}s`]: '{d}:{hh}:{mm}:{ss}',
 };
-const countdown = ($startAt: number, $endAt: number, formatter?: string | object) => {
+const countdown = ($startAt: number, $endAt: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
-  const startAt = moment(uniTime($startAt)),
-    endAt = moment(uniTime($endAt));
+  const startAt = moment(uniTime($startAt));
+  const endAt = moment(uniTime($endAt));
   if (startAt.isSameOrBefore(endAt)) {
     const gutter = endAt.diff(startAt);
     const mapKeysNums = sortBy(
       Object.keys(configuredFormat).map((item) => {
-        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''));
+        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''), 10);
         return boundaryTime;
       }),
     );
-    let rangeIndex = findIndex(mapKeysNums, (item) => item * 1000 >= gutter);
+    const rangeIndex = findIndex(mapKeysNums, (item) => item * 1000 >= gutter);
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown(gutter, theFormat);

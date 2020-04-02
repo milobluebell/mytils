@@ -69,7 +69,7 @@ countdown(1583825398, 1584080998, formatMap); // 02天23小时,00:00
 
 ```js
 import { countdown } from 'mytils';
-import { countdownFromDuration } from 'mytils';
+import { countdownDuration } from 'mytils';
 
 const startAt = 2398348861;
 const endAt = 3379424523;
@@ -77,7 +77,7 @@ const endAt = 3379424523;
 countdown(2398348861, 3379424523, '{y}年{M}月{d}天, {hh}:{mm}:{ss}'); // 没有任何疑问的：31年1月2天, 01:01:02
 countdown(2398348861, 3379424523, '{d}天, {hh}:{mm}:{ss}'); // 结果是：2天, 01:01:02 ，而不是 11377天, 01:01:02
 
-// 相类似地，countdownFromDuration方法也一样：
-countdownFromDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒
-countdownFromDuration(3 * 25 * 60 * 60, '{h}小时{mm}分钟{ss}'); // 结果是 3小时00分钟00，而不是75小时00分钟00
+// 相类似地，countdownDuration方法也一样：
+countdownDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒
+countdownDuration(3 * 25 * 60 * 60, '{h}小时{mm}分钟{ss}'); // 结果是 3小时00分钟00，而不是75小时00分钟00
 ```

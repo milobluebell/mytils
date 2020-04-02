@@ -1,4 +1,4 @@
-import Regs from './../../Regs';
+import Regs from '../../Regs';
 
 /**
  *
@@ -10,14 +10,14 @@ import Regs from './../../Regs';
 const encodeObject = (string: string, $justTestProp = false as boolean) => {
   let $string: string;
   if ($justTestProp) {
-    $string = string + '';
+    $string = `${string}`;
   } else {
     if (typeof string !== 'string') {
-      throw new Error('input param should be a string but got one ' + typeof $string);
+      throw new Error(`input param should be a string but got one ${typeof $string}`);
     }
     $string = string;
   }
-  const _string = $string.replace(/\s*/g, '');
+  const trimedString = $string.replace(/\s*/g, '');
   if (/^[0-9]+(\.)?[0-9]+$/g.test($string)) {
     // number and float
     return parseFloat($string);
@@ -26,11 +26,10 @@ const encodeObject = (string: string, $justTestProp = false as boolean) => {
     return $string === 'NaN' ? NaN : $string === 'undefined' ? undefined : null;
   } else if (/^(true|false)$/i.test($string)) {
     // boolean
-    return $string === 'true' ? true : false;
-  } else if (Regs.objectLike.test(_string)) {
+    return $string === 'true';
+  } else if (Regs.objectLike.test(trimedString)) {
     // object or array
-    const __string = _string.replace(/\'/g, '"');
-    return JSON.parse(__string);
+    return JSON.parse(trimedString.replace(/'/g, '"'));
   } else return $string;
 };
 export default encodeObject;

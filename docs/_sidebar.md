@@ -1,4 +1,7 @@
-- [开始](/)
+- 开始
+
+  - [安装](doc/start)
+  - [版本策略](doc/versions)
 
 - 文档
 
@@ -11,8 +14,8 @@
 
     - [formatUnixTime](doc/time/formatUnixTime)
     - [countdown](doc/time/countdown)
-    - [countdowFromNow](doc/time/countdownFromNow)
-    - [countdowFromDuration](doc/time/countdownFromDuration)
+    - [countdownNow](doc/time/countdownNow)
+    - [countdownDuration](doc/time/countdownDuration)
 
   - Url
 

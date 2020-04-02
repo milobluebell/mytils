@@ -30,6 +30,11 @@ jobs:
         env: 
           CI: true
 
+      - name: lint
+        run: npm run lint
+        env: 
+          CI: true
+
       - name: report codecov
         uses: codecov/codecov-action@v1
         with:

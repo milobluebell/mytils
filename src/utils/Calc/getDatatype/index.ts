@@ -4,7 +4,7 @@
  * @func    判断参数的数据类型
  * @return  string 值枚举就是types_zh中key的枚举
  */
-const types_zh = {
+const typesZh = {
   array: '数组',
   object: '对象',
   number: '数字',
@@ -18,19 +18,19 @@ const types_zh = {
   map: 'Map',
 };
 const localeRefs = {
-  zh: types_zh,
+  zh: typesZh,
 };
 type localeOptionTypes = 'en' | 'zh';
 const localeOptions = Object.keys(localeRefs);
 
-const getDataType = ($param: any, $locale?: localeOptionTypes) => {
+const getDataType = ($param: Object, $locale?: localeOptionTypes): string => {
   if (!$locale || $locale === 'en' || localeOptions.includes($locale)) {
-    const _type = Object.prototype.toString
+    const $type = Object.prototype.toString
       .call($param)
       .split('[object ')[1]
       .toLowerCase()
       .replace(/[^a-zA-Z]*/g, '');
-    let result = typeof $param === 'number' && isNaN($param) ? 'NaN' : _type;
+    let result = typeof $param === 'number' && Number.isNaN($param) ? 'NaN' : $type;
     result = !$locale || $locale === 'en' ? result : localeRefs[$locale][result];
     return result;
   } else throw new Error(`second $param[$locale] should be one of: ${localeOptions.map((item) => `"${item}"`).join(' or ')}`);

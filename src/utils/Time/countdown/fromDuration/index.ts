@@ -1,6 +1,6 @@
-import { formatMap } from '..';
 import { sortBy, findIndex } from 'lodash-es';
-import { formattedCountdown } from './../../aux';
+import { formatMap } from '..';
+import { formattedCountdown, IFormatter } from '../../aux';
 
 /**
  *
@@ -9,20 +9,20 @@ import { formattedCountdown } from './../../aux';
  * @param  formatter*  string
  * @return             string
  */
-export const countdownFromDuration = ($duration: number, formatter?: string | object) => {
+export const countdownDuration = ($duration: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const duration = $duration.toString();
   if ($duration >= 0 && /^[0-9]+$/.test(duration)) {
     const mapKeysNums = sortBy(
       Object.keys(configuredFormat).map((item) => {
-        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''));
+        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''), 10);
         return boundaryTime;
       }),
     );
-    let rangeIndex = findIndex(mapKeysNums, (item) => item >= $duration);
+    const rangeIndex = findIndex(mapKeysNums, (item) => item >= $duration);
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown($duration * 1000, theFormat);
   } else throw new Error('invalid duration');
 };
-export default countdownFromDuration;
+export default countdownDuration;

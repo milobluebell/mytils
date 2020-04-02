@@ -1,4 +1,4 @@
-import { getAllQueries } from '../aux';
+import { getAllQueries, Tparams } from '../aux';
 
 /**
  *
@@ -8,7 +8,7 @@ import { getAllQueries } from '../aux';
  * @returns              string | object | null
  */
 const matcherTester = /({[a-zA-Z_$]+})+/;
-const getRestParams = ($matcher: string, $uri?: string) => {
+const getRestParams = ($matcher: URL['href'], $uri?: URL['href']): Tparams => {
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');
@@ -23,7 +23,7 @@ const getRestParams = ($matcher: string, $uri?: string) => {
   const queries = getAllQueries(searchPart);
   const splittedMatcher = $matcher.split('/');
   const splittedUrl = urlPart.split('/');
-  let result = {};
+  const result = {};
   splittedMatcher.forEach((item, index) => {
     if (item !== splittedUrl[index]) {
       const key = item.replace(/({|})/g, '');
@@ -31,7 +31,7 @@ const getRestParams = ($matcher: string, $uri?: string) => {
       result[key] = value;
     }
   });
-  return Object.assign({}, result, queries);
+  return { ...result, ...queries };
 };
 
 export default getRestParams;

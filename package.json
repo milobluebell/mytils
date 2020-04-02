@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "0.2.0",
+  "version": "0.8.2",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
@@ -8,7 +8,7 @@
     "dist": "rollup -c",
     "dev": "preact watch",
     "doc": "npx docsify serve docs",
-    "lint": "eslint src/**/*.{js,jsx,ts,tsx}",
+    "lint": "./bin/lint.sh",
     "test": "jest ./src",
     "pretty-quick": "pretty-quick"
   },
