@@ -1,3 +1,4 @@
+import { IFormatter } from '../../aux';
 import countdown from '..';
 
 /**
@@ -7,5 +8,5 @@ import countdown from '..';
  * @param  formatter  string
  * @return            string
  */
-export const countdownNow = ($endAt: number, formatter?: string | object) => countdown(new Date().getTime(), $endAt, formatter);
+export const countdownNow = ($endAt: number, formatter?: string | IFormatter): string => countdown(new Date().getTime(), $endAt, formatter);
 export default countdownNow;

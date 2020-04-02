@@ -5,7 +5,7 @@ import encodeObject from 'src/utils/Translate/encodeObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
-  method: (data?: any, extra?: any) => any | any;
+  method(data?: any, extra?: any): any | any[];
   params?: any[];
   paramLength?: number;
 }
@@ -33,7 +33,6 @@ const tagStyle = {
   borderLeft: `solid 3px red`,
   lineHeight: 2,
 };
-const tagStyle2 = {};
 const tableStyle = {
   marginBottom: 10,
   paddingLeft: 15,

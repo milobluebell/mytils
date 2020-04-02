@@ -19,6 +19,9 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
+  // 测试类型
+  getDataType({ a: 2 });
+
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>

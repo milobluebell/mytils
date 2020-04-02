@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { sortBy, findIndex } from 'lodash-es';
-import { uniTime, formattedCountdown } from '../aux';
+import { uniTime, formattedCountdown, IFormatter } from '../aux';
 
 /**
  *
@@ -19,7 +19,7 @@ export const formatMap = {
   // 大于24h，且小于72h
   [`${60 * 60 * 24 * 5}s`]: '{d}:{hh}:{mm}:{ss}',
 };
-const countdown = ($startAt: number, $endAt: number, formatter?: string | object) => {
+const countdown = ($startAt: number, $endAt: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const startAt = moment(uniTime($startAt));
   const endAt = moment(uniTime($endAt));

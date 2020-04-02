@@ -24,3 +24,5 @@ export const getAllQueries = ($search: string) => {
     return Object.assign(prev, obj);
   }, {});
 };
+
+export type Tparams = 'string' | { [index: string]: string } | {} | string | null;

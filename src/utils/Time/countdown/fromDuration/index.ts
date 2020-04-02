@@ -1,6 +1,6 @@
 import { sortBy, findIndex } from 'lodash-es';
 import { formatMap } from '..';
-import { formattedCountdown } from '../../aux';
+import { formattedCountdown, IFormatter } from '../../aux';
 
 /**
  *
@@ -9,7 +9,7 @@ import { formattedCountdown } from '../../aux';
  * @param  formatter*  string
  * @return             string
  */
-export const countdownDuration = ($duration: number, formatter?: string | object) => {
+export const countdownDuration = ($duration: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const duration = $duration.toString();
   if ($duration >= 0 && /^[0-9]+$/.test(duration)) {

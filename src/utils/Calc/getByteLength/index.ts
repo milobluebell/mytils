@@ -6,7 +6,7 @@ import getJsEnv from '../getJsEnv';
  * @param $string  string
  * @return         number
  */
-const getByteLength = ($string: string) => {
+const getByteLength = ($string: string): number => {
   if (typeof $string === 'string') {
     if ($string.split('').every((item) => item.charCodeAt(0) <= 255)) {
       return $string.length;

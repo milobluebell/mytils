@@ -23,7 +23,7 @@ const localeRefs = {
 type localeOptionTypes = 'en' | 'zh';
 const localeOptions = Object.keys(localeRefs);
 
-const getDataType = ($param: any, $locale?: localeOptionTypes) => {
+const getDataType = ($param: Object, $locale?: localeOptionTypes): string => {
   if (!$locale || $locale === 'en' || localeOptions.includes($locale)) {
     const $type = Object.prototype.toString
       .call($param)

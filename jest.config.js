@@ -6,7 +6,7 @@ module.exports = {
   testURL: 'http://localhost:8080',
   moduleFileExtensions: ['js', 'ts'],
   moduleDirectories: ['node_modules'],
-  testPathIgnorePatterns: ['dist/'],
+  testPathIgnorePatterns: ['dist/', 'build/'],
   testMatch: ['**/?(*.)(spec|test).[jt]s?(x)'],
   moduleNameMapper: {
     '^lodash-es$': 'lodash',
