@@ -3,4 +3,5 @@
 /dist/
 /build/
 **/_vendor/**/*
-**/*.js
+**/*.test.ts
+**/*.test.js
