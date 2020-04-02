@@ -14,8 +14,8 @@
 
     - [formatUnixTime](doc/time/formatUnixTime)
     - [countdown](doc/time/countdown)
-    - [countdowFromNow](doc/time/countdownFromNow)
-    - [countdowFromDuration](doc/time/countdownFromDuration)
+    - [countdowNow](doc/time/countdownNow)
+    - [countdowDuration](doc/time/countdownDuration)
 
   - Url
 

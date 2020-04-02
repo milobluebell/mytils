@@ -1,7 +1,7 @@
 // Time
 export { default as countdown } from './Time/countdown';
-export { default as countdownFromNow } from './Time/countdown/fromNow';
-export { default as countdownFromDuration } from './Time/countdown/fromDuration';
+export { default as countdowNow } from './Time/countdown/fromNow';
+export { default as countdownDuration } from './Time/countdown/fromDuration';
 export { default as formatUnixTime } from './Time/formatUnixTime';
 
 // Calc

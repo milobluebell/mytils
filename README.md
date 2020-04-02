@@ -12,7 +12,7 @@ npm i mytils --save
 
 ## 文档 Documentation
 
-[Documentation](https://milobluebell.github.io/mytils/#/)
+[Documentation](https:///mytils.site)
 
 ## 贡献 Contributing
 

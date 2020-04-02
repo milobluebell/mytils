@@ -7,8 +7,8 @@ module.exports = {
 
   // Time
   countdown: 'src/utils/Time/countdown',
-  countdownFromNow: 'src/utils/Time/countdown/fromNow',
-  countdownFromDuration: 'src/utils/Time/countdown/fromDuration',
+  countdownNow: 'src/utils/Time/countdown/fromNow',
+  countdownDuration: 'src/utils/Time/countdown/fromDuration',
   formatUnixTime: 'src/utils/Time/formatUnixTime',
 
   // Calc

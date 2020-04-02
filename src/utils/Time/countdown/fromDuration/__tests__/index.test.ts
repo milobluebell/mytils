@@ -1,4 +1,4 @@
-import countdownFromDuration from '../index';
+import countdownDuration from '../index';
 
 export const stringFormatter = `{d}:{hh}:{mm}:{ss}`;
 export const objFormatter = {
@@ -9,7 +9,7 @@ export const objFormatter = {
   // 3min以内
   [`${3 * 60}s`]: '{y}:{M}:{d}, {hh}:{mm}:{ss}',
 };
-describe('countdownFromDuration', function() {
+describe('countdownDuration', function() {
   const normalTestDesc = `duration was smaller than`;
   const testers = [
     {
@@ -68,7 +68,7 @@ describe('countdownFromDuration', function() {
   testers.forEach((rule: any) => {
     it(`${normalTestDesc} ${rule.moreDesc}`, function() {
       const duration = rule.duration;
-      expect(countdownFromDuration(duration, rule?.formatter)).toBe(rule.toBe);
+      expect(countdownDuration(duration, rule?.formatter)).toBe(rule.toBe);
     });
   });
 });
