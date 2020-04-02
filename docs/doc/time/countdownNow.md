@@ -26,7 +26,7 @@
 ```js
 import { countdownNow } from 'mytils';
 
-countdownNow(2398348800, '{y}年{m}月{d}天'); // 25年09月22天
+countdownNow(2398348800, '{y}年{M}月{d}天'); // 25年8月29天。书写文档的时候是 Apr-2-2020
 ```
 
 #### 附加说明

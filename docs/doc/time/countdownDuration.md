@@ -26,7 +26,7 @@
 ```js
 import { countdownDuration } from 'mytils';
 
-countdownDuration(6124, '{d}天{h}小时{m}分钟{s}秒'); // 00天01小时42分钟04秒
+countdownDuration(6124, '{d}天{h}小时{m}分钟{s}秒'); // 0天1小时42分钟4秒
 ```
 
 #### 附加说明
