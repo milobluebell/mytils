@@ -5,7 +5,7 @@ import encodeObject from 'src/utils/Translate/encodeObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
-  method?: (data: any) => any;
+  method: (data?: any, extra?: any) => any | any;
   params?: any[];
   paramLength?: number;
 }
