@@ -12,7 +12,7 @@ const getByteLength = ($string: string) => {
       return $string.length;
     } else {
       if (getJsEnv() === 'node') {
-        return new Buffer($string).length;
+        return Buffer.from($string).length;
       }
       return new Blob([$string]).size;
     }

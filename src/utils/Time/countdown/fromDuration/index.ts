@@ -1,6 +1,6 @@
-import { formatMap } from '..';
 import { sortBy, findIndex } from 'lodash-es';
-import { formattedCountdown } from './../../aux';
+import { formatMap } from '..';
+import { formattedCountdown } from '../../aux';
 
 /**
  *
@@ -15,11 +15,11 @@ export const countdownDuration = ($duration: number, formatter?: string | object
   if ($duration >= 0 && /^[0-9]+$/.test(duration)) {
     const mapKeysNums = sortBy(
       Object.keys(configuredFormat).map((item) => {
-        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''));
+        const boundaryTime = parseInt(item.replace(/[^0-9]/g, ''), 10);
         return boundaryTime;
       }),
     );
-    let rangeIndex = findIndex(mapKeysNums, (item) => item >= $duration);
+    const rangeIndex = findIndex(mapKeysNums, (item) => item >= $duration);
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown($duration * 1000, theFormat);

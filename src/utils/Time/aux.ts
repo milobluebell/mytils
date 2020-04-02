@@ -1,10 +1,10 @@
 import moment from 'moment';
 
 // js以ms为unix时间单位，所以需要对数据单位进行统一 | @return number
-export const uniTime = (unix_time: number) => {
-  const $length = unix_time.toString().length;
+export const uniTime = (unixTime: number) => {
+  const $length = unixTime.toString().length;
   if ($length !== 10 && $length !== 13) throw new Error('it is an unavailable unix timestamp');
-  else return $length === 10 ? unix_time * 1000 : unix_time;
+  else return $length === 10 ? unixTime * 1000 : unixTime;
 };
 
 // 补位，如果出现4:14:7则补应补位为04:14:07 | @return string
@@ -24,10 +24,10 @@ const replacements = [
   { reg: /\{s+\}/g, text: 'seconds', unsupplementalReg: /\{s\}/g },
 ];
 export const formattedCountdown = (duration: number, formatter: string) => {
-  const _duration = moment.duration(duration);
+  const $duration = moment.duration(duration);
   let result = formatter;
   replacements.forEach((rule) => {
-    result = result.replace(rule.unsupplementalReg, _duration[rule.text]()).replace(rule.reg, makeupWithO(_duration[rule.text]()));
+    result = result.replace(rule.unsupplementalReg, $duration[rule.text]()).replace(rule.reg, makeupWithO($duration[rule.text]()));
   });
   return result;
 };

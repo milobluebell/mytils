@@ -22,7 +22,7 @@ const getQueryParams = ($key?: string | string[], $uri?: string) => {
       // 如果不传入$key则输出全部查询参数
       return getAllQueries(windowLocationSearch);
     } else {
-      let result = {};
+      const result = {};
       $key.forEach((item) => {
         result[item] = getQueryParam(item, windowLocationSearch);
       });

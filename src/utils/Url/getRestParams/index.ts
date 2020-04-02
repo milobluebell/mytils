@@ -23,7 +23,7 @@ const getRestParams = ($matcher: string, $uri?: string) => {
   const queries = getAllQueries(searchPart);
   const splittedMatcher = $matcher.split('/');
   const splittedUrl = urlPart.split('/');
-  let result = {};
+  const result = {};
   splittedMatcher.forEach((item, index) => {
     if (item !== splittedUrl[index]) {
       const key = item.replace(/({|})/g, '');
@@ -31,7 +31,7 @@ const getRestParams = ($matcher: string, $uri?: string) => {
       result[key] = value;
     }
   });
-  return Object.assign({}, result, queries);
+  return { ...result, ...queries };
 };
 
 export default getRestParams;
