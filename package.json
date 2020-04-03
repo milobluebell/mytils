@@ -10,7 +10,8 @@
     "doc": "npx docsify serve docs",
     "lint": "./bin/lint.sh",
     "test": "jest ./src",
-    "pretty-quick": "pretty-quick"
+    "pretty-quick": "pretty-quick",
+    "pre-commit": "npm run pretty-quick && npm run lint"
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
@@ -81,7 +82,7 @@
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run pre-commit"
     }
   },
   "commitlint": {
