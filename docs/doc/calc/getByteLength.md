@@ -25,5 +25,11 @@
 ```js
 import { getByteLength } from 'mytils';
 
-getByteLength('麻麻，我想吃烤山药'); // 27, 因为是utf8编码
+const $string = String.fromCharCode(270);
+const $string2 = String.fromCharCode(65);
+const $string3 = '麻麻，我想吃烤山药';
+
+getByteLength($string); // 2
+getByteLength($string2); // 1
+getByteLength($string3); // 27, 因为是utf8编码
 ```

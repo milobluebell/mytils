@@ -19,8 +19,10 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
-  // 测试类型
-  getDataType({ a: 2 });
+  const startAt = 2398348861;
+  const endAt = 3379424523;
+  var a = formatUnixTime(2398348820, 'YYYY/YY/M/D H:m:s');
+  console.log(a);
 
   return (
     <div>
@@ -29,7 +31,7 @@ const Home: FunctionalComponent = () => {
       {/* demos */}
       <Demo params={[1, true]} method={encodeObject}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
-      <Demo params={[2398348861, 3379424523, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
+      <Demo params={[1583825398, 1583828938, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownNow}></Demo>
       <Demo params={[216124]} method={countdownDuration}></Demo>
       <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080?test=1&test2=2']} method={getQueryParams}></Demo>
