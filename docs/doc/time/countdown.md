@@ -77,6 +77,6 @@ countdown(startAt, endAt, '{y}年{M}月{d}天, {hh}:{mm}:{ss}'); // 没有任何
 countdown(startAt, endAt, '{d}天, {hh}:{mm}:{ss}'); // 结果是：2天, 01:01:02 ，而不是 11377天, 01:01:02
 
 // 相类似地，countdownDuration方法也一样：
-countdownDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒 
+countdownDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒
 countdownDuration(3 * 25 * 60 * 60, '{h}小时{mm}分钟{ss}'); // 结果是 3小时00分钟00，而不是75小时00分钟00
 ```
