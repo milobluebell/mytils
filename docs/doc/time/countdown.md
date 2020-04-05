@@ -28,7 +28,7 @@
 import { countdown } from 'mytils';
 
 countdown(1583825398, 1583825798); // 06:40
-countdown(1583825398, 1583825798, '{m}分钟{s}秒'); // 06分钟40秒
+countdown(1583825398, 1583825798, '{m}分钟{s}秒'); // 6分钟40秒
 ```
 
 > 参数 format 为 object 类型时，属性名为时间边界(单位**秒**)，属性值为对应展示格式。
@@ -44,9 +44,9 @@ const formatMap = {
   [`${60 * 60 * 72}s`]: '{d}天{h}小时,{m}:{s}',
 };
 
-countdown(1583825398, 1583828938, formatMap); // 06分钟40
-countdown(1583825398, 1583829058, formatMap); // 01小时01:00s
-countdown(1583825398, 1584080998, formatMap); // 02天23小时,00:00
+countdown(1583825398, 1583828938, formatMap); // 59分钟0
+countdown(1583825398, 1583829058, formatMap); // 1小时1:0s
+countdown(1583825398, 1584080998, formatMap); // 2天23小时,0:0
 ```
 
 #### 附加说明
@@ -68,14 +68,13 @@ countdown(1583825398, 1584080998, formatMap); // 02天23小时,00:00
 !> countdown[From...] 系列函数对应“时间-解析”的各位输出内容是“该位的值”，而不是“精确到该位”，举个例子：
 
 ```js
-import { countdown } from 'mytils';
-import { countdownDuration } from 'mytils';
+import { countdown, countdownDuration } from 'mytils';
 
 const startAt = 2398348861;
 const endAt = 3379424523;
 
-countdown(2398348861, 3379424523, '{y}年{M}月{d}天, {hh}:{mm}:{ss}'); // 没有任何疑问的：31年1月2天, 01:01:02
-countdown(2398348861, 3379424523, '{d}天, {hh}:{mm}:{ss}'); // 结果是：2天, 01:01:02 ，而不是 11377天, 01:01:02
+countdown(startAt, endAt, '{y}年{M}月{d}天, {hh}:{mm}:{ss}'); // 没有任何疑问的：31年1月2天, 01:01:02
+countdown(startAt, endAt, '{d}天, {hh}:{mm}:{ss}'); // 结果是：2天, 01:01:02 ，而不是 11377天, 01:01:02
 
 // 相类似地，countdownDuration方法也一样：
 countdownDuration(3 * 25 * 60 * 60); // 结果是 3:03:00:00， 表示3天3小时0分0秒

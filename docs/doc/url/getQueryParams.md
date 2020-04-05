@@ -41,9 +41,8 @@ getQueryParams('test3'); // true
 import { getQueryParams } from 'mytils';
 
 // 假设调用页面的浏览器的url是：http://localhost:3000/testRoute?test=a&test2=b&test3=c
-const urllikeString = 'http://localhost:3000/testRoute?test=a&test2=b';
 
-getQueryParams(); // {test: 'a', test2: 'b'}
+getQueryParams(); // {test: 'a', test2: 'b'，test3: true}
 ```
 
 > 指定的 url：
