@@ -41,9 +41,7 @@ const emitConfig = (type) => {
         extensions: ['.ts', '.js'],
       }),
       json(),
-      commonjs({
-        dynamicRequireTargets: ['node_modules/dayjs/plugin/*.js'],
-      }),
+      commonjs(),
       typescript({
         useTsconfigDeclarationDir: true,
         compilerOptions: {

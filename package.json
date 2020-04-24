@@ -14,8 +14,8 @@
     "pre-commit": "npm run pretty-quick && npm run lint"
   },
   "dependencies": {
-    "dayjs": "^1.8.25",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.15",
+    "dayjs": "^1.8.25"
   },
   "peerDependencies": {
     "dayjs": "^1.8.25",
