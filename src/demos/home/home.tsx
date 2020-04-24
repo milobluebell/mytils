@@ -19,11 +19,6 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
-  const startAt = 2398348861;
-  const endAt = 3379424523;
-  var a = formatUnixTime(2398348820, 'YYYY/YY/M/D H:m:s');
-  console.log(a);
-
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>

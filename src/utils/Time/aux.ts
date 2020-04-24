@@ -1,4 +1,5 @@
-import moment from 'moment';
+import duration from 'dayjs/plugin/duration';
+import dayjs from 'dayjs';
 
 // js以ms为unix时间单位，所以需要对数据单位进行统一 | @return number
 export const uniTime = (unixTime: number) => {
@@ -23,11 +24,11 @@ const replacements = [
   { reg: /\{m+\}/g, text: 'minutes', unsupplementalReg: /\{m\}/g },
   { reg: /\{s+\}/g, text: 'seconds', unsupplementalReg: /\{s\}/g },
 ];
-export const formattedCountdown = (duration: number, formatter: string) => {
-  const $duration = moment.duration(duration);
+export const formattedCountdown = ($duration: number, formatter: string) => {
+  dayjs.extend(duration);
   let result = formatter;
   replacements.forEach((rule) => {
-    result = result.replace(rule.unsupplementalReg, $duration[rule.text]()).replace(rule.reg, makeupWithO($duration[rule.text]()));
+    result = result.replace(rule.unsupplementalReg, dayjs.duration($duration)[rule.text]()).replace(rule.reg, makeupWithO(dayjs.duration($duration)[rule.text]()));
   });
   return result;
 };

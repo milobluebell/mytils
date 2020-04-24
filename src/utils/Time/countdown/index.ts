@@ -1,4 +1,4 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { sortBy, findIndex } from 'lodash-es';
 import { uniTime, formattedCountdown, IFormatter } from '../aux';
 
@@ -21,9 +21,9 @@ export const formatMap = {
 };
 const countdown = ($startAt: number, $endAt: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
-  const startAt = moment(uniTime($startAt));
-  const endAt = moment(uniTime($endAt));
-  if (startAt.isSameOrBefore(endAt)) {
+  const startAt = dayjs(uniTime($startAt));
+  const endAt = dayjs(uniTime($endAt));
+  if (startAt.isBefore(endAt)) {
     const gutter = endAt.diff(startAt);
     const mapKeysNums = sortBy(
       Object.keys(configuredFormat).map((item) => {
@@ -35,7 +35,7 @@ const countdown = ($startAt: number, $endAt: number, formatter?: string | IForma
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown(gutter, theFormat);
-  } else throw new Error('start time should be earlier, but end time was');
+  } else throw new Error('start time should be earlier, but it not');
 };
 
 export default countdown;
