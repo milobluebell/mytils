@@ -1,11 +1,14 @@
 import nodeResolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
+import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
-const path = require('path');
+import analyze from 'rollup-plugin-analyzer';
 
+const path = require('path');
 const packageJson = require('./package.json');
+
 const srcDir = 'src';
 
 const emitConfig = (type) => {
@@ -19,7 +22,7 @@ const emitConfig = (type) => {
         sourceMap: true,
         exports: 'named',
         globals: {
-          moment: 'moment',
+          dayjs: 'dayjs',
           'lodash-es': 'lodashEs',
         },
       },
@@ -38,14 +41,20 @@ const emitConfig = (type) => {
         extensions: ['.ts', '.js'],
       }),
       json(),
+      commonjs({
+        dynamicRequireTargets: ['node_modules/dayjs/plugin/*.js'],
+      }),
       typescript({
         useTsconfigDeclarationDir: true,
         compilerOptions: {
-          declaration: type === 'umd' ? false : true,
+          declaration: type !== 'umd',
         },
       }),
       replace({
         'process.env.NODE_ENV': JSON.stringify('production'),
+      }),
+      analyze({
+        summaryOnly: true,
       }),
     ].concat(
       type === 'umd'
@@ -65,10 +74,12 @@ const emitConfig = (type) => {
 };
 
 //
+const inputor = require('./modules.js');
+
 export default ['es', 'cjs', 'umd'].map((item) => {
   const config = emitConfig(item);
   if (item === 'es' || item === 'cjs') {
-    config.input = require('./modules.js');
+    config.input = inputor;
   }
   return config;
 });

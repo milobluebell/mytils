@@ -14,5 +14,6 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/extensions': 0,
     'no-control-regex': 1,
+    'prefer-object-spread': 0,
   },
 };
