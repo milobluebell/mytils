@@ -31,7 +31,9 @@ const Home: FunctionalComponent = () => {
       <Demo params={[216124]} method={countdownDuration}></Demo>
       <Demo params={[['test', 'test2'], 'http://192.168.102.11:8080?test=1&test2=2']} method={getQueryParams}></Demo>
       <Demo params={[]} method={getQueryParams}></Demo>
-      <Demo params={[`/company/{company}/order/detail/{part}`, 'https://192.168.102.11:8080/company/macrohard/order/detail/C##?version=3']} method={getRestParams}></Demo>
+      <Demo
+        params={[`https://192.168.102.11:8080/company/{company}/order/detail/{part}`, 'https://192.168.102.11:8080/company/macrohard/order/detail/C##?version=3']}
+        method={getRestParams}></Demo>
       <Demo params={[0.24, 2, true]} method={getRatioFromNum}></Demo>
       <Demo params={['24%', 3, true]} method={getNumFromRatio}></Demo>
       <Demo params={[2398348800, 'YYYY/MM/DD HH:mm:ss']} method={formatUnixTime}></Demo>

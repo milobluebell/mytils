@@ -85,7 +85,7 @@ export const Demo: FunctionalComponent<IDemoProps> = (props: IDemoProps) => {
         }}>
         {props?.method.name}
       </Button>
-      {result ? <span style={resultStyle}>运算结果：{result?.toString()}</span> : null}
+      {result ? <span style={resultStyle}>运算结果：{JSON.stringify(result)?.replace(/(^\"|\"$)/g, '')}</span> : null}
       <a style={Object.assign({}, tagStyle, document.documentElement.clientWidth <= 760 ? { bottom: 0 } : { top: 0 })} href={`#${props.method.name}`}>
         {props.method.name}
       </a>
