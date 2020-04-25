@@ -1,4 +1,4 @@
-import { getAllQueries, Tparams } from '../aux';
+import { getAllQueries, TUrlParams } from '../aux';
 
 /**
  *
@@ -8,7 +8,7 @@ import { getAllQueries, Tparams } from '../aux';
  * @returns              string | object | null
  */
 const matcherTester = /({[a-zA-Z_$]+})+/;
-const getRestParams = ($matcher: URL['href'], $uri?: URL['href']): Tparams => {
+const getRestParams = ($matcher: URL['href'], $uri?: URL['href']): TUrlParams | any => {
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');

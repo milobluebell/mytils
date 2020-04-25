@@ -1,14 +1,16 @@
-import { getQueryParam, getAllQueries, Tparams } from '../aux';
+import { getQueryParam, getAllQueries, TUrlParams } from '../aux';
 
 /**
  *
  * @func     获取url中的查询参数
  * @param    $key*    string | string[]
  * @param    $uri     string
- * @returns           string | object | null
+ * @returns           TUrlParams | TUrlParams[]
+ * @desc     overload 2 factories
  */
-
-const getQueryParams = ($key?: string | string[], $uri?: URL['href']): Tparams => {
+function getQueryParams($key?: string, $uri?: URL['href']): TUrlParams;
+function getQueryParams<T extends string>(para: T[], $uri?: URL['href']): Record<T, string>;
+function getQueryParams($key?: any, $uri?: URL['href']) {
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');
@@ -30,6 +32,6 @@ const getQueryParams = ($key?: string | string[], $uri?: URL['href']): Tparams =
       return result;
     }
   }
-};
+}
 
 export default getQueryParams;
