@@ -8,7 +8,8 @@ import { getQueryParam, getAllQueries, TUrlParams } from '../aux';
  * @returns           TUrlParams | TUrlParams[]
  * @desc     overload 2 factories
  */
-function getQueryParams($key?: string, $uri?: URL['href']): TUrlParams;
+function getQueryParams(): any;
+function getQueryParams($key: string, $uri?: URL['href']): TUrlParams;
 function getQueryParams<T extends string>(para: T[], $uri?: URL['href']): Record<T, string>;
 function getQueryParams($key?: any, $uri?: URL['href']) {
   const url = $uri || (window?.location ? window.location.href : '');
