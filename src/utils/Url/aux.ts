@@ -25,4 +25,4 @@ export const getAllQueries = ($search: string) => {
   }, {});
 };
 
-export type TUrlParams = string | null | boolean;
+export type TUrlParams = string | null | true;
