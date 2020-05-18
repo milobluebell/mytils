@@ -17,7 +17,7 @@ function getQueryParams($key?: any, $uri?: URL['href']) {
     throw new Error('uri param is invalid or deficient');
   } else {
     if (url.indexOf('?') < 0) {
-      return {};
+      return null;
     }
     const windowLocationSearch = url.substr(url.indexOf('?'));
     if (typeof $key === 'string') {
