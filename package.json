@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",
@@ -130,6 +130,7 @@
     "type": "git",
     "url": "git+https://github.com/milobluebell/mytils.git"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "contributors": [
     "Milo Ma <milobluebell@gmail.com> (https://github.com/milobluebell)"
   ],
