@@ -30,4 +30,11 @@ describe('getNumFromRatio', function() {
     const ratio = `255555%`; // 2555.55
     expect(getNumFromRatio(ratio, -2)).toBe(2600);
   });
+
+  // 参数必须有%字符
+  it('param  must contain character %', function() {
+    const ratio = `15.55`;
+    // @ts-ignore
+    expect(() => getNumFromRatio(ratio, -2)).toThrow(`ratio param should include '%' character`);
+  });
 });

@@ -5,10 +5,10 @@ const matcherTester = /({[a-zA-Z_$]+})+/;
  *
  * getRestParams($matcher [, $uri]) - 🍀获取rest风格路由中rest和query参数
  *
- * @param    $matcher
- * @param    $uri
+ * @param    $matcher   匹配参数的模式
+ * @param    $uri       待匹配的url
  *
- * @解释      建议严格使用能够完全对应 url 进行匹配的 matcher 参数，因为我们暂时只支持这样的使用。请避免未知的不必要麻烦。
+ * @解释      建议严格使用能够完全对应 url 进行匹配的 matcher 参数，因为我们暂时只支持这样的使用。请避免未知的不必要麻烦。比如：${host}/company/macrohard/market/order/C##
  */
 const getRestParams = ($matcher: URL['href'], $uri?: URL['href']): TUrlParams | any => {
   const url = $uri || (window?.location ? window.location.href : '');

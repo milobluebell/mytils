@@ -71,4 +71,9 @@ describe('countdownDuration', function() {
       expect(countdownDuration(duration, rule?.formatter)).toBe(rule.toBe);
     });
   });
+
+  // 当duration不合法的时候给予正确报错
+  it('when duration is invalid, throw an error out', function() {
+    expect(() => countdownDuration(-123456)).toThrow(`it is an invalid duration`);
+  });
 });

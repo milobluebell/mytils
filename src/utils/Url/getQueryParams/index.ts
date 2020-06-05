@@ -1,4 +1,4 @@
-import getJsEnv from 'utils/Calc/getJsEnv';
+import getJsEnv from 'src/utils/Calc/getJsEnv';
 import { getQueryParam, getAllQueries, TUrlParams } from '../aux';
 
 /**

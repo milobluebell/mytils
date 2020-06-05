@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 // js以ms为unix时间单位，所以需要对数据单位进行统一 | @return number
 export const uniTime = (unixTime: number) => {
   const $length = unixTime.toString().length;
-  if ($length !== 10 && $length !== 13) throw new Error('it is an unavailable unix timestamp');
+  if ($length !== 10 && $length !== 13) throw new Error('it is an unsupported unix timestamp');
   else return $length === 10 ? unixTime * 1000 : unixTime;
 };
 

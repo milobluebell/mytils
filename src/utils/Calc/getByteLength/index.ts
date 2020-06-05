@@ -6,6 +6,9 @@ import getJsEnv from '../getJsEnv';
  *
  * @param   $string   待推断字符串
  */
+export enum Errors {
+  notStringType = 'input should be a string',
+}
 const getByteLength = ($string: string): number => {
   if (typeof $string === 'string') {
     if ($string.split('').every((item) => item.charCodeAt(0) <= 255)) {
@@ -17,7 +20,7 @@ const getByteLength = ($string: string): number => {
       return new Blob([$string]).size;
     }
   } else {
-    throw new Error(`input should be a string`);
+    throw new Error(Errors.notStringType);
   }
 };
 export default getByteLength;

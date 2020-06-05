@@ -16,11 +16,11 @@
 ##### npm
 
 ```shell
-npm install mytils
+npm install mytils --save
 ```
 
 ##### yarn
 
 ```shell
-yarn add mytils
+yarn add mytils --save
 ```

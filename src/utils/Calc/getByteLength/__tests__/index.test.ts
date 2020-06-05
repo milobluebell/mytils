@@ -1,4 +1,4 @@
-import getByteLength from '../index';
+import getByteLength, { Errors } from '..';
 import vendors from './../../../../../tests/vendors';
 
 describe('getByteLength', function() {
@@ -26,4 +26,11 @@ describe('getByteLength', function() {
     const urf8char = vendors.decodeUTF8(utf8Origin);
     expect(getByteLength(urf8char)).toBe(27);
   });
+
+  // 当输入类型不是string时，给予正确报错提示
+  if ('throw error correctly when params $string is not in string type') {
+    const notStringParam = { test: { test: 'test' }, test2: [1, 2] };
+    // @ts-ignore
+    expect(() => getByteLength(notStringParam)).toThrow(Errors.notStringType);
+  }
 });

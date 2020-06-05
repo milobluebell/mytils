@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Demo } from 'src/components/demoTemplate';
-import evelObject from 'src/utils/Translate/evelObject';
+import evalObject from 'src/utils/Translate/evalObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 import countdown from 'src/utils/Time/countdown';
 import countdownNow from 'src/utils/Time/countdown/fromNow';
@@ -13,20 +13,19 @@ import formatUnixTime from 'src/utils/Time/formatUnixTime';
 import getByteLength from 'src/utils/Calc/getByteLength';
 import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 import encodeUTF8 from 'src/utils/Translate/encodeUTF8';
+import omitProps from 'src/utils/Object/omitProps';
 
 const hStyle = {
   backgroundColor: `#8e8e8e`,
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
-  const { data } = getQueryParams(['data']);
-
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
 
       {/* demos */}
-      <Demo params={[1, true]} method={evelObject}></Demo>
+      <Demo params={[1, true]} method={evalObject}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
       <Demo params={[1583825398, 1583828938, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownNow}></Demo>

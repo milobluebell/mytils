@@ -27,7 +27,12 @@
     - [getRatioFromNum](doc/number/getRatioFromNum)
     - [getNumFromRatio](doc/number/getNumFromRatio)
 
+  - Object
+
+    - [hasProp](doc/object/hasProp)
+    - [omitProps](doc/object/omitProps)
+
   - 转义
     - [decodeUTF8](doc/translate/decodeUTF8)
     - [encodeUTF8](doc/translate/encodeUTF8)
-    - [evelObject](doc/translate/evelObject)
+    - [evalObject](doc/translate/evalObject)

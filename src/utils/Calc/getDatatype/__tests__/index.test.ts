@@ -1,4 +1,4 @@
-import getDataType from '../index';
+import getDataType, { localeOptions } from '..';
 
 describe('getDatatype', function() {
   const tests = [
@@ -67,5 +67,12 @@ describe('getDatatype', function() {
     it(`input is ${item.ipt} in locale`, function() {
       expect(getDataType(item.ipt, localeEnv)).toBe(item.expectation_local);
     });
+  });
+
+  // 检查locale是否支持
+  it('check locale is valid', function() {
+    const tester = '12345';
+    // @ts-ignore
+    expect(() => getDataType(tester, 'zh-cn')).toThrow(`second $param[$locale] should be one of: ${localeOptions.map((item) => `"${item}"`).join(' or ')}`);
   });
 });

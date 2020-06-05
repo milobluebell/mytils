@@ -72,4 +72,11 @@ describe('countdown', function() {
       expect(countdown(rule.startAt, rule.endAt, rule?.formatter)).toBe(rule.toBe);
     });
   });
+
+  // 当startAt比endAt还大的是否需要正确报错
+  it('when startAt is larger than endAt, throw an error out', function() {
+    const startAt = 1577812953;
+    const endAt = 1577812953 - 24 * 60 * 60;
+    expect(() => countdown(startAt, endAt)).toThrow(`start time should be earlier, but it not`);
+  });
 });

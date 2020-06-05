@@ -27,6 +27,6 @@ export const countdownDuration = ($duration: number, formatter?: string | IForma
     const keyFlag = `${rangeIndex > -1 ? mapKeysNums[rangeIndex] : mapKeysNums[mapKeysNums.length - 1]}s`;
     const theFormat = configuredFormat[keyFlag];
     return formattedCountdown($duration * 1000, theFormat);
-  } else throw new Error('invalid duration');
+  } else throw new Error('it is an invalid duration');
 };
 export default countdownDuration;

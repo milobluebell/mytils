@@ -13,7 +13,7 @@ export { default as getQueryParams } from './Url/getQueryParams';
 export { default as getRestParams } from './Url/getRestParams';
 
 // Translate
-export { default as evelObject } from './Translate/evelObject';
+export { default as evalObject } from './Translate/evalObject';
 export { default as encodeUTF8 } from './Translate/encodeUTF8';
 export { default as decodeUTF8 } from './Translate/decodeUTF8';
 

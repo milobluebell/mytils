@@ -1,6 +1,6 @@
-import evelObject from '..';
+import evalObject from '..';
 
-describe('evelObject', function() {
+describe('evalObject', function() {
   const tests = [
     {
       ipt: `123`,
@@ -32,11 +32,21 @@ describe('evelObject', function() {
       ipt: `NaN`,
       expectation: NaN,
     },
+    {
+      ipt: `const tester = '123'`,
+      expectation: `const tester = '123'`,
+    },
   ];
 
   tests.forEach((item) => {
     it(`input is ${item.ipt}`, function() {
-      expect(evelObject(item.ipt))[item.testFunc || 'toBe'](item.expectation);
+      expect(evalObject(item.ipt))[item.testFunc || 'toBe'](item.expectation);
     });
+  });
+
+  // 当输入类型不为string时，提示正确报错
+  it(`throw a correct error message for an 'Not String Type' input`, function() {
+    // @ts-ignore
+    expect(() => evalObject([1, 2])).toThrow('input param should be a string but got one array');
   });
 });

@@ -30,20 +30,8 @@ describe('omitProps', function() {
     });
   });
 
-  // 清洗对象原型链上的属性
-  it('omit his __proto__ property correctly', function() {
-    const theObj = {
-      testKey: 'testValue',
-      testKey2: 'testValue2',
-    };
-    Object.prototype['testKey3'] = 'testValue3';
-    let testResult = false;
-    const omittedObj = omitProps('testKey3', theObj);
-    for (const i in omittedObj) {
-      if (i === 'testKey3') {
-        testResult = true;
-      }
-    }
-    expect(testResult).toBe(true);
+  // 传入targetObj参数必须是object类型
+  it('second param must be object type', function() {
+    expect(() => omitProps(['testKey', 'testKey3'], [1, 2])).toThrow(`targetObj should be an object,but got array`);
   });
 });
