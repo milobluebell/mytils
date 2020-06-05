@@ -1,16 +1,17 @@
 import { round } from 'lodash-es';
 import { supplyZero } from '../aux';
 
+const maxPrecisionBoundary = 6;
 /**
  *
- * @func 将传入的number，转换为百分比字符串
- * @param $number        number*  将要被转换的数字，通常为小数
- * @param $precision     number   精度(小数点后位数)
- * @param $supplemental  boolean  是否补位，比如translateIntoRatio(0.24, 2, false)为24%,
- *                                        translateIntoRatio(0.24, 2, true)则为24.00%
- * @return               string
+ * getRatioFromNum($number [, $precision , $supplemental]) - 🍀number转百分比字符串
+ *
+ * @param $number        待转换数字
+ * @param $precision     精度（default：数字的字符长度）
+ * @param $supplemental  是否为了满足precision而补0是否补位（default：false）
+ *
+ * @解释   $supplemental  比如getRatioFromNum(0.24, 2, false)为24%,getRatioFromNum(0.24, 2, true)则为24.00%
  */
-const maxPrecisionBoundary = 6;
 const getRatioFromNum = ($number: number, $precision?: number, $supplemental?: boolean): string => {
   if ($precision && ($precision < 0 - maxPrecisionBoundary || $precision > maxPrecisionBoundary)) {
     console.warn(`precision was too ${$precision < 0 ? 'low' : 'high'} to makes sense`);

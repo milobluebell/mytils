@@ -10,6 +10,8 @@ module.exports = {
   testMatch: ['**/?(*.)(spec|test).[jt]s?(x)'],
   moduleNameMapper: {
     '^lodash-es$': 'lodash',
+    '^src/(.*)$': '<rootDir>/src/$1',
+    '^utils/(.*)$': '<rootDir>/src/utils/$1',
   },
   coverageDirectory: './coverage/',
   collectCoverage: true,

@@ -1,7 +1,7 @@
 import { FunctionalComponent, h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Button } from './button';
-import encodeObject from 'src/utils/Translate/encodeObject';
+import evelObject from 'src/utils/Translate/evelObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 interface IDemoProps {
@@ -79,7 +79,7 @@ export const Demo: FunctionalComponent<IDemoProps> = (props: IDemoProps) => {
       ))}
       <Button
         onClick={() => {
-          const newData = data.map((item) => encodeObject(item, true));
+          const newData = data.map((item) => evelObject(item, true));
           setData(newData);
           setResult(data.length === 1 ? props.method(data[0]) : props.method(...data));
         }}>

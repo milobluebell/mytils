@@ -4,10 +4,14 @@ import { formattedCountdown, IFormatter } from '../../aux';
 
 /**
  *
- * @func   倒计时 (从现在开始到指定时间)
- * @param  $duration*  number(s) 持续时间（单位为s）
- * @param  formatter*  string
- * @return             string
+ * countdownDuration($duration [, $formatter]) - 🍀根据时间长度显示倒计时
+ *
+ * @param  $duration   持续时间（单位为s）
+ * @param  $formatter  倒计时输出格式
+ *
+ * @解释    $formatter  可以根据阶段显示不同内容，格式举例：
+ *
+ * {[`${60 * 60}s`]: '{mm}:{ss}'}
  */
 export const countdownDuration = ($duration: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;

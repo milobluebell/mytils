@@ -30,4 +30,4 @@
   - 转义
     - [decodeUTF8](doc/translate/decodeUTF8)
     - [encodeUTF8](doc/translate/encodeUTF8)
-    - [encodeObject](doc/translate/encodeObject)
+    - [evelObject](doc/translate/evelObject)

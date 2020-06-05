@@ -13,8 +13,14 @@ export { default as getQueryParams } from './Url/getQueryParams';
 export { default as getRestParams } from './Url/getRestParams';
 
 // Translate
-export { default as encodeObject } from './Translate/encodeObject';
+export { default as evelObject } from './Translate/evelObject';
+export { default as encodeUTF8 } from './Translate/encodeUTF8';
+export { default as decodeUTF8 } from './Translate/decodeUTF8';
 
 // Number
 export { default as getRatioFromNum } from './Number/getRatioFromNum';
 export { default as getNumFromRatio } from './Number/getNumFromRatio';
+
+// Object
+export { default as hasProp } from './Object/hasProp';
+export { default as omitProps } from './Object/omitProps';

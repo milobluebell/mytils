@@ -5,3 +5,4 @@
 **/_vendor/**/*
 **/*.test.ts
 **/*.test.js
+/.tsc-check

@@ -2,14 +2,6 @@ import dayjs from 'dayjs';
 import { sortBy, findIndex } from 'lodash-es';
 import { uniTime, formattedCountdown, IFormatter } from '../aux';
 
-/**
- *
- * @func   倒计时 (两个指定时间)
- * @param  $startAt*  number(unix_time) 倒计时开始的时间
- * @param  $endAt*    number(unix_time) 倒计时结束的时间
- * @param  formatter  string
- * @return            string
- */
 // @desc 指定的是小于这个时间(s)的时候的展示格式
 export const formatMap = {
   // 1小时以内
@@ -19,6 +11,18 @@ export const formatMap = {
   // 大于24h，且小于72h
   [`${60 * 60 * 24 * 5}s`]: '{d}:{hh}:{mm}:{ss}',
 };
+/**
+ *
+ * countdown($startAt, $endAt [, formatter]) - 🍀根据两个UNIX时间展示倒计时
+ *
+ * @param  $startAt   倒计时开始的时间（小值）
+ * @param  $endAt      倒计时结束的时间（大值）
+ * @param  $formatter  倒计时输出格式
+ *
+ * @解释    $formatter  可以根据阶段显示不同内容，格式举例：
+ *
+ * {[`${60 * 60}s`]: '{mm}:{ss}'}
+ */
 const countdown = ($startAt: number, $endAt: number, formatter?: string | IFormatter): string => {
   const configuredFormat = (typeof formatter === 'string' ? { [`0s`]: formatter } : formatter) || formatMap;
   const startAt = dayjs(uniTime($startAt));

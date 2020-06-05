@@ -1,6 +1,6 @@
-import encodeObject from '../index';
+import evelObject from '..';
 
-describe('encodeObject', function() {
+describe('evelObject', function() {
   const tests = [
     {
       ipt: `123`,
@@ -36,7 +36,7 @@ describe('encodeObject', function() {
 
   tests.forEach((item) => {
     it(`input is ${item.ipt}`, function() {
-      expect(encodeObject(item.ipt))[item.testFunc || 'toBe'](item.expectation);
+      expect(evelObject(item.ipt))[item.testFunc || 'toBe'](item.expectation);
     });
   });
 });
