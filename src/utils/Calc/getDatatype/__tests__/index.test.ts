@@ -1,6 +1,6 @@
 import getDataType, { localeOptions } from '..';
 
-describe('getDatatype', function () {
+describe('getDatatype', function() {
   const tests = [
     {
       ipt: 123,
@@ -56,7 +56,7 @@ describe('getDatatype', function () {
 
   // getDataType in english language
   tests.forEach((item) => {
-    it(`input is ${item.ipt}`, function () {
+    it(`input is ${item.ipt}`, function() {
       expect(getDataType(item.ipt)).toBe(item.expectation);
     });
   });
@@ -64,15 +64,15 @@ describe('getDatatype', function () {
   // getDataType in one locale language
   tests.forEach((item) => {
     const localeEnv = 'zh';
-    it(`input is ${item.ipt} in locale`, function () {
+    it(`input is ${item.ipt} in locale`, function() {
       expect(getDataType(item.ipt, localeEnv)).toBe(item.expectation_local);
     });
   });
 
   // 检查locale是否支持
-  it('check locale is valid', function () {
+  it('check locale is valid', function() {
     const tester = '12345';
     // @ts-ignore
     expect(() => getDataType(tester, 'zh-cn')).toThrow(`second $param[$locale] should be one of: ${localeOptions.map((item) => `"${item}"`).join(' or ')}`);
-  })
+  });
 });

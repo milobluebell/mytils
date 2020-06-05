@@ -1,6 +1,6 @@
 import getRestParams from '../index';
 
-describe('getRestParams', function () {
+describe('getRestParams', function() {
   const host = `https://www.test.com`;
   //
   it(`run correctly`, () => {
@@ -19,5 +19,4 @@ describe('getRestParams', function () {
     const url = `${host}/company/macrohard/order/detail/C##?version=3`;
     expect(() => getRestParams(`${host}/company/company/order/detail/part`, url)).toThrow('invalid params matcher');
   });
-
 });

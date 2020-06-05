@@ -7,7 +7,7 @@ import getJsEnv from '../getJsEnv';
  * @param   $string   待推断字符串
  */
 export enum Errors {
-  notStringType = 'input should be a string'
+  notStringType = 'input should be a string',
 }
 const getByteLength = ($string: string): number => {
   if (typeof $string === 'string') {
