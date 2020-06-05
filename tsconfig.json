@@ -19,8 +19,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "utils/*": ["src/utils/*"],
+      "src/*": ["src/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,

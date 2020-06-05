@@ -9,9 +9,10 @@
     "dev": "preact watch",
     "doc": "npx docsify serve docs",
     "lint": "./bin/lint.sh",
-    "test": "jest ./src",
+    "test": "jest ./src -c --coverage",
     "pretty-quick": "pretty-quick",
-    "pre-commit": "npm run pretty-quick && npm run lint"
+    "pre-commit": "npm run pretty-quick && npm run lint",
+    "check-coverage": "npx istanbul check-coverage --statement 90"
   },
   "dependencies": {
     "lodash-es": "^4.17.15",
@@ -45,6 +46,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.1",
     "identity-obj-proxy": "^3.0.0",
+    "istanbul": "^0.4.5",
     "jest": "^25.1.0",
     "per-env": "^1.0.2",
     "preact": "^10.3.1",

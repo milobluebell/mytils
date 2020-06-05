@@ -15,7 +15,7 @@ const localeRefs = {
   zh: typesZh,
 };
 type localeOptionTypes = 'en' | 'zh';
-const localeOptions = Object.keys(localeRefs);
+export const localeOptions = Object.keys(localeRefs);
 
 /**
  *

@@ -26,7 +26,7 @@ module.exports = {
   // Translate
   decodeUTF8: 'src/utils/Translate/decodeUTF8',
   encodeUTF8: 'src/utils/Translate/encodeUTF8',
-  evelObject: 'src/utils/Translate/evelObject',
+  evalObject: 'src/utils/Translate/evalObject',
 
   // Object
   hasProp: 'src/utils/Object/hasProp',

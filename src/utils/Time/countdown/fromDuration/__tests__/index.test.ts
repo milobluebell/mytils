@@ -9,7 +9,7 @@ export const objFormatter = {
   // 3min以内
   [`${3 * 60}s`]: '{y}:{M}:{d}, {hh}:{mm}:{ss}',
 };
-describe('countdownDuration', function() {
+describe('countdownDuration', function () {
   const normalTestDesc = `duration was smaller than`;
   const testers = [
     {
@@ -66,9 +66,15 @@ describe('countdownDuration', function() {
   ];
 
   testers.forEach((rule: any) => {
-    it(`${normalTestDesc} ${rule.moreDesc}`, function() {
+    it(`${normalTestDesc} ${rule.moreDesc}`, function () {
       const duration = rule.duration;
       expect(countdownDuration(duration, rule?.formatter)).toBe(rule.toBe);
     });
   });
+
+  // 当duration不合法的时候给予正确报错
+  it('when duration is invalid, throw an error out', function () {
+    expect(() => countdownDuration(-123456)).toThrow(`it is an invalid duration`);
+  });
+
 });
