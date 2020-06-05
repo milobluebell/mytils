@@ -1,4 +1,5 @@
 import getDataType from 'src/utils/Calc/getDatatype';
+import { cloneDeep } from 'lodash-es';
 import hasProp from '../hasProp';
 
 /**
@@ -14,7 +15,7 @@ const omitProps = <T extends { [key: string]: any }, U extends string>($key: U |
     throw new Error(`second param targetObj should be an object,but got ${targetType}`);
   }
   const keies: string[] = typeof $key === 'string' ? [$key] : $key;
-  const result = JSON.parse(JSON.stringify($targetObj));
+  const result = cloneDeep($targetObj);
   keies.forEach((oneKey) => {
     if (hasProp(oneKey, result)) {
       delete result[oneKey];

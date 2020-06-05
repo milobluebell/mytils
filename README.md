@@ -17,7 +17,7 @@ npm i mytils --save
 - 轻量 minimized <img alt="zippedsize" src="https://img.shields.io/bundlephobia/minzip/mytils?color=%2342b983">
 
 - 稳定 stable <img alt="covarage" src="https://img.shields.io/codecov/c/github/milobluebell/mytils">
-  
+
 - 简单 simple 👉 [在线 Documentation](https:///mytils.site)
 
 ## 贡献 Contributing
