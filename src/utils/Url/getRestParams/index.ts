@@ -1,13 +1,15 @@
 import { getAllQueries, TUrlParams } from '../aux';
 
+const matcherTester = /({[a-zA-Z_$]+})+/;
 /**
  *
- * @func     获取rest风格路由中rest和query参数
- * @param    $matcher*   string | string[]
- * @param    $uri        string
- * @returns              string | object | null
+ * getRestParams($matcher [, $uri]) - 🍀获取rest风格路由中rest和query参数
+ *
+ * @param    $matcher
+ * @param    $uri
+ *
+ * @解释      建议严格使用能够完全对应 url 进行匹配的 matcher 参数，因为我们暂时只支持这样的使用。请避免未知的不必要麻烦。
  */
-const matcherTester = /({[a-zA-Z_$]+})+/;
 const getRestParams = ($matcher: URL['href'], $uri?: URL['href']): TUrlParams | any => {
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {

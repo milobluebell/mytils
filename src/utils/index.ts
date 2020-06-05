@@ -13,8 +13,10 @@ export { default as getQueryParams } from './Url/getQueryParams';
 export { default as getRestParams } from './Url/getRestParams';
 
 // Translate
-export { default as encodeObject } from './Translate/encodeObject';
+export { default as evelObject } from './Translate/evelObject';
 
 // Number
 export { default as getRatioFromNum } from './Number/getRatioFromNum';
 export { default as getNumFromRatio } from './Number/getNumFromRatio';
+
+// Object

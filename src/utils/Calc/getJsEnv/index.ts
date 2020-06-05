@@ -1,9 +1,6 @@
 /**
- * 
- * @func 判断当前js宿主环境是浏览器还是node
- * @return   string   'browser' | 'node'
+ *
+ * getJsEnv() - 🍀判断当前js宿主环境
  */
-const getJsEnv = () => {
-  return typeof window === 'object' ? 'browser' : 'node';
-}
+const getJsEnv = (): 'browser' | 'node' => (window && typeof window === 'object' ? 'browser' : 'node');
 export default getJsEnv;

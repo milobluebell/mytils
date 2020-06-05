@@ -25,6 +25,10 @@ module.exports = {
 
   // Translate
   decodeUTF8: 'src/utils/Translate/decodeUTF8',
-  encodeUTF8: 'src/utils/Translate/encodeObject',
-  encodeObject: 'src/utils/Translate/encodeObject',
+  encodeUTF8: 'src/utils/Translate/encodeUTF8',
+  evelObject: 'src/utils/Translate/evelObject',
+
+  // Object
+  hasProp: 'src/utils/Object/hasProp',
+  omitProps: 'src/utils/Object/omitProps',
 };

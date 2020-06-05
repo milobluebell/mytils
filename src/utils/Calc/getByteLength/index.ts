@@ -2,9 +2,9 @@ import getJsEnv from '../getJsEnv';
 
 /**
  *
- * @func 计算字符串的字节长度
- * @param $string  string
- * @return         number
+ * getByteLength($string) - 🍀计算字节长度
+ *
+ * @param   $string   待推断字符串
  */
 const getByteLength = ($string: string): number => {
   if (typeof $string === 'string') {

@@ -2,12 +2,14 @@ import Regs from '../../Regs';
 
 /**
  *
- * @func 根据input标签输入的内容，自动转换成javascript对应的数据类型。否则会被默认为string。
- * @param    string    接受一个string入参，一般来自<input/>
- * @returns  unknown   视输入情况（具体参见文档：）
- * // TODO：补充文档和url
+ * evelObject($string [, $justTestProp]) - 🍀解析string并转成对应的javascript对象实体，如果无法正确解析则依然为string
+ *
+ * @param    $string           待处理输入内容
+ * @param    $justTestProp
+ *
+ * @解释      本函数通常用于js解析inputDom输入内容，平时很少用到。
  */
-const encodeObject = (string: string, $justTestProp = false as boolean) => {
+const evelObject = (string: string, $justTestProp: boolean = false): unknown => {
   let $string: string;
   if ($justTestProp) {
     $string = `${string}`;
@@ -32,4 +34,4 @@ const encodeObject = (string: string, $justTestProp = false as boolean) => {
     return JSON.parse(trimedString.replace(/'/g, '"'));
   } else return $string;
 };
-export default encodeObject;
+export default evelObject;

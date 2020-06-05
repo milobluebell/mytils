@@ -10,6 +10,11 @@ a useful utils.
 npm i mytils --save
 ```
 
+## 优势 Advantages
+
+- vscode 下体验优异的提示卡片
+- 小体积
+
 ## 文档 Documentation
 
 [Documentation](https:///mytils.site)
@@ -17,5 +22,3 @@ npm i mytils --save
 ## 贡献 Contributing
 
 本仓库旨在创造一个复用程度高的工具库，省去开发者更多时间，欢迎提供 PR 和提出 Issue。
-
-## 回家吃饭 Less overtime

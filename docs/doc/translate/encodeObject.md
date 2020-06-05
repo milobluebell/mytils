@@ -1,4 +1,4 @@
-# encodeObject
+# evelObject
 
 > 将字符串解析为 javascript 对象
 
@@ -27,11 +27,11 @@
 > 一般使用：
 
 ```js
-import { encodeObject } from 'mytils';
+import { evelObject } from 'mytils';
 
-encodeObject('1234'); // 数字1234
-encodeObject('te1234st'); // 'te1234st'
-encodeObject('true'); // 布尔true
-encodeObject('{"a":1,"b":2,"c":{"d":3}}'); // 对象{a: 1,b: 2,c: {d: 3}}
-encodeObject('[1,`2`,false]'); // 数组对象[1, "2", false]
+evelObject('1234'); // 数字1234
+evelObject('te1234st'); // 'te1234st'
+evelObject('true'); // 布尔true
+evelObject('{"a":1,"b":2,"c":{"d":3}}'); // 对象{a: 1,b: 2,c: {d: 3}}
+evelObject('[1,`2`,false]'); // 数组对象[1, "2", false]
 ```

@@ -15,5 +15,6 @@ module.exports = {
     'import/extensions': 0,
     'no-control-regex': 1,
     'prefer-object-spread': 0,
+    'no-restricted-syntax': 1,
   },
 };

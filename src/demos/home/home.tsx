@@ -1,6 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Demo } from 'src/components/demoTemplate';
-import encodeObject from 'src/utils/Translate/encodeObject';
+import evelObject from 'src/utils/Translate/evelObject';
 import getDataType from 'src/utils/Calc/getDatatype';
 import countdown from 'src/utils/Time/countdown';
 import countdownNow from 'src/utils/Time/countdown/fromNow';
@@ -19,12 +19,14 @@ const hStyle = {
   padding: 10,
 };
 const Home: FunctionalComponent = () => {
+  const { data } = getQueryParams(['data']);
+
   return (
     <div>
       <h2 style={hStyle}>mytils {process.env.NODE_ENV === 'development' ? 'dev' : 'prod'}</h2>
 
       {/* demos */}
-      <Demo params={[1, true]} method={encodeObject}></Demo>
+      <Demo params={[1, true]} method={evelObject}></Demo>
       <Demo params={[123, 'zh']} method={getDataType}></Demo>
       <Demo params={[1583825398, 1583828938, '{y}:{M}:{d}, {hh}:{mm}:{ss}']} method={countdown}></Demo>
       <Demo params={[2398348800]} method={countdownNow}></Demo>

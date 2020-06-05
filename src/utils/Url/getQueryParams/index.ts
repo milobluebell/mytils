@@ -1,17 +1,20 @@
+import getJsEnv from 'utils/Calc/getJsEnv';
 import { getQueryParam, getAllQueries, TUrlParams } from '../aux';
 
 /**
  *
- * @func     获取url中的查询参数
- * @param    $key*    string | string[]
- * @param    $uri     string
- * @returns           TUrlParams | TUrlParams[]
- * @desc     overload 2 factories
+ * getQueryParams($key [, $uri]) - 🍀获取url中的查询参数
+ *
+ * @param    $key    待查询参数的key
+ * @param    $uri    指定的url地址(default: 当前window.location.href)
  */
 function getQueryParams(): any;
 function getQueryParams($key: string, $uri?: URL['href']): TUrlParams;
 function getQueryParams<T extends string>(para: T[], $uri?: URL['href']): Record<T, string>;
 function getQueryParams($key?: any, $uri?: URL['href']) {
+  if (getJsEnv() === 'node') {
+    throw new Error('this function can only be used in browser environment');
+  }
   const url = $uri || (window?.location ? window.location.href : '');
   if (!url) {
     throw new Error('uri param is invalid or deficient');

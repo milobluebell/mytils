@@ -33,5 +33,5 @@ export const formattedCountdown = ($duration: number, formatter: string) => {
   return result;
 };
 export interface IFormatter {
-  [gutterString: string]: string;
+  [gutter: string]: string;
 }

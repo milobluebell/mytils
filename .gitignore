@@ -17,7 +17,7 @@
 /out/
 
 # production
-/build 
+/build
 /undefined
 /pages/docs/*
 */**/dll/*
@@ -26,6 +26,7 @@
 /dist
 /es
 *.tgz
+/.tsc-check/
 
 # debug
 npm-debug.log*

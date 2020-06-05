@@ -1,9 +1,3 @@
-/**
- *
- * @$param   $param
- * @func    判断参数的数据类型
- * @return  string 值枚举就是types_zh中key的枚举
- */
 const typesZh = {
   array: '数组',
   object: '对象',
@@ -23,6 +17,13 @@ const localeRefs = {
 type localeOptionTypes = 'en' | 'zh';
 const localeOptions = Object.keys(localeRefs);
 
+/**
+ *
+ * getDataType($param [, $locale]) - 🍀判断数据类型
+ *
+ * @param   $param   待推断对象
+ * @param   $locale  语言区
+ */
 const getDataType = ($param: Object, $locale?: localeOptionTypes): string => {
   if (!$locale || $locale === 'en' || localeOptions.includes($locale)) {
     const $type = Object.prototype.toString
