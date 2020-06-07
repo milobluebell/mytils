@@ -44,6 +44,7 @@ const emitConfig = (type) => {
       commonjs(),
       typescript({
         useTsconfigDeclarationDir: true,
+        tsconfig: 'tsconfig.dist.json',
         compilerOptions: {
           declaration: type !== 'umd',
         },

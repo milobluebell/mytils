@@ -23,6 +23,8 @@ export const localeOptions = Object.keys(localeRefs);
  *
  * @param   $param   待推断对象
  * @param   $locale  语言区
+ *
+ * @解释     返回内容小写
  */
 const getDataType = ($param: Object, $locale?: localeOptionTypes): string => {
   if (!$locale || $locale === 'en' || localeOptions.includes($locale)) {

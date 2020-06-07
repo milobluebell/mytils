@@ -14,6 +14,7 @@ import getByteLength from 'src/utils/Calc/getByteLength';
 import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 import encodeUTF8 from 'src/utils/Translate/encodeUTF8';
 import omitProps from 'src/utils/Object/omitProps';
+import ellipsis from 'src/utils/String/ellipsis';
 
 const hStyle = {
   backgroundColor: `#8e8e8e`,
@@ -41,6 +42,7 @@ const Home: FunctionalComponent = () => {
       <Demo params={['麻麻，我想吃烤山药']} method={getByteLength}></Demo>
       <Demo params={['一给我里，giao,giao！']} method={encodeUTF8}></Demo>
       <Demo params={['&#x5B9D;&#x8D1D;&#x56DE;&#x5BB6;&#x5403;&#x996D;&#x5417;&#xFF1F;']} method={decodeUTF8}></Demo>
+      <Demo params={['一给我里，giao,giao！', 5, true]} method={ellipsis}></Demo>
       {/* end of demos */}
     </div>
   );

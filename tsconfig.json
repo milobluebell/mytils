@@ -14,6 +14,8 @@
     "strictNullChecks": false,
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": ["dom", "es2016"],
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]
@@ -21,19 +23,14 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "declarationDir": "./dist/typings",
   },
   "exclude": [
     "node_modules",
     "dist",
     "lib",
     "es",
-    "tests",
+    "shared",
     ".tsc-check",
-    "**/__tests__",
-    "src/components",
-    "src/demos",
   ],
   "include": [
     "**/*.ts",

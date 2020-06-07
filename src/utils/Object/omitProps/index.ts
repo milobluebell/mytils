@@ -4,7 +4,7 @@ import hasProp from '../hasProp';
 
 /**
  *
- * omitProps($string, $targetObj [, $prototypable]) - 🍀 清洗对象的指定属性
+ * omitProps($string, $targetObj) - 🍀 清洗对象的指定属性
  *
  * @param  $key           待清洗的属性的key或key的数组
  * @param  $targetObj     被清洗对象

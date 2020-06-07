@@ -1,5 +1,5 @@
 import getByteLength, { Errors } from '..';
-import vendors from './../../../../../tests/vendors';
+import vendors from '../../../../../shared/vendors';
 
 describe('getByteLength', function() {
   // 编码小于255的字符
