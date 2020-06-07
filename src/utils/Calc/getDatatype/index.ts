@@ -19,7 +19,7 @@ export const localeOptions = Object.keys(localeRefs);
 
 /**
  *
- * getDataType($param [, $locale]) - 🍀判断数据类型
+ * getDataType($param [, $locale]) - 🍀 判断数据类型
  *
  * @param   $param   待推断对象
  * @param   $locale  语言区

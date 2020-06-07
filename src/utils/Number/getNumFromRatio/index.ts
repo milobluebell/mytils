@@ -3,7 +3,7 @@ import { supplyZero } from '../aux';
 
 /**
  *
- * getNumFromRatio($ratio [, $precision, $supplemental]) - 🍀百分比字符串转number
+ * getNumFromRatio($ratio [, $precision, $supplemental]) - 🍀 百分比字符串转number
  *
  * @param $ratio         待转换的百分比字符串
  * @param $precision     精度（default：数字的字符长度）

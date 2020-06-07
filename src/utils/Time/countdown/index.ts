@@ -13,7 +13,7 @@ export const formatMap = {
 };
 /**
  *
- * countdown($startAt, $endAt [, formatter]) - 🍀根据两个UNIX时间展示倒计时
+ * countdown($startAt, $endAt [, formatter]) - 🍀 根据两个UNIX时间展示倒计时
  *
  * @param  $startAt   倒计时开始的时间（小值）
  * @param  $endAt      倒计时结束的时间（大值）

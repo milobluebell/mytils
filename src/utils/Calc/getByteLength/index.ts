@@ -1,14 +1,14 @@
 import getJsEnv from '../getJsEnv';
 
-/**
- *
- * getByteLength($string) - 🍀计算字节长度
- *
- * @param   $string   待推断字符串
- */
 export enum Errors {
   notStringType = 'input should be a string',
 }
+/**
+ *
+ * getByteLength($string) - 🍀 计算字节长度
+ *
+ * @param   $string   待推断字符串
+ */
 const getByteLength = ($string: string): number => {
   if (typeof $string === 'string') {
     if ($string.split('').every((item) => item.charCodeAt(0) <= 255)) {

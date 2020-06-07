@@ -3,7 +3,7 @@ import getDataType from '../../Calc/getDatatype';
 
 /**
  *
- * evalObject($string [, $justTestProp]) - 🍀解析string并转成对应的javascript对象实体，如果无法正确解析则依然为string
+ * evalObject($string [, $justTestProp]) - 🍀 解析string并转成对应的javascript对象实体，如果无法正确解析则依然为string
  *
  * @param    $string           待处理输入内容
  *

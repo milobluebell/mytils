@@ -1,6 +1,6 @@
 /**
  *
- * hasProp($key, $targetObj) - 🍀判断对象是否存在某一属性
+ * hasProp($key, $targetObj) - 🍀 判断对象是否存在某一属性
  *
  * @param   $key         待推断属性的key
  * @param   $targetObj   被推断对象

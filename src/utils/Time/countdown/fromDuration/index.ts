@@ -4,7 +4,7 @@ import { formattedCountdown, IFormatter } from '../../aux';
 
 /**
  *
- * countdownDuration($duration [, $formatter]) - 🍀根据时间长度显示倒计时
+ * countdownDuration($duration [, $formatter]) - 🍀 根据时间长度显示倒计时
  *
  * @param  $duration   持续时间（单位为s）
  * @param  $formatter  倒计时输出格式
