@@ -3,7 +3,7 @@ import { getQueryParam, getAllQueries, TUrlParams } from '../aux';
 
 /**
  *
- * getQueryParams($key [, $uri]) - 🍀获取url中的查询参数
+ * getQueryParams($key [, $uri]) - 🍀 获取url中的查询参数
  *
  * @param    $key    待查询参数的key
  * @param    $uri    指定的url地址(default: 当前window.location.href)

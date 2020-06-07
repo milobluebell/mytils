@@ -4,7 +4,7 @@ import { supplyZero } from '../aux';
 const maxPrecisionBoundary = 6;
 /**
  *
- * getRatioFromNum($number [, $precision , $supplemental]) - 🍀number转百分比字符串
+ * getRatioFromNum($number [, $precision , $supplemental]) - 🍀 number转百分比字符串
  *
  * @param $number        待转换数字
  * @param $precision     精度（default：数字的字符长度）

@@ -3,7 +3,7 @@ import { getAllQueries, TUrlParams } from '../aux';
 const matcherTester = /({[a-zA-Z_$]+})+/;
 /**
  *
- * getRestParams($matcher [, $uri]) - 🍀获取rest风格路由中rest和query参数
+ * getRestParams($matcher [, $uri]) - 🍀 获取rest风格url中的路径和query参数
  *
  * @param    $matcher   匹配参数的模式
  * @param    $uri       待匹配的url

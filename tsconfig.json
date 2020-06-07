@@ -1,9 +1,5 @@
 {
-  "extends": "@mlz/lint/tsconfig.json",
   "compilerOptions": {
-    "noImplicitAny": false,
-    "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "es2016"],
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
@@ -11,12 +7,13 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveConstEnums": true,
-    "removeComments": true,
+    "removeComments": false,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": false,
     "strictNullChecks": false,
-    "outDir": "dist",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "src/*": ["src/*"]
@@ -25,13 +22,18 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "declarationDir": "./dist/types",
+    "declarationDir": "./dist/typings",
   },
   "exclude": [
     "node_modules",
     "dist",
     "lib",
     "es",
+    "tests",
+    ".tsc-check",
+    "**/__tests__",
+    "src/components",
+    "src/demos",
   ],
   "include": [
     "**/*.ts",

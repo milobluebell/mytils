@@ -25,6 +25,7 @@
 # dist
 /dist
 /es
+/typings
 *.tgz
 /.tsc-check/
 

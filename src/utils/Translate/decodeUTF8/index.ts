@@ -1,6 +1,6 @@
 /**
  *
- * decodeUTF8($utfCode) - 🍀UTF8字符转字符串
+ * decodeUTF8($utfCode) - 🍀 UTF8字符转字符串
  *
  * @param $utfCode 待转utf8字符
  */
