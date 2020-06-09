@@ -10,10 +10,10 @@
     "lib",
     "es",
     "tests",
+    "shared",
     ".tsc-check",
     "**/__tests__",
     "src/components",
     "src/demos",
-    "**/__tests__",
   ],
 }
