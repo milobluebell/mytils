@@ -32,7 +32,12 @@
     - [hasProp](doc/object/hasProp)
     - [omitProps](doc/object/omitProps)
 
+  - String
+
+    - [ellipsis](doc/string/ellipsis)
+
   - 转义
+
     - [decodeUTF8](doc/translate/decodeUTF8)
     - [encodeUTF8](doc/translate/encodeUTF8)
     - [evalObject](doc/translate/evalObject)

@@ -11,7 +11,7 @@ import getDataType from 'src/utils/Calc/getDatatype';
  *
  * @解释     $encodable   如果区分编码，则1个中文不是1个字节长度。比如：ellipsis('全世界都说中国话', 5)为'全世界都说...'；而ellipsis('全世界都说中国话', 5)为'全...'
  */
-const ellipsis = ($string: string, $maxLength: number, $encodable?: boolean) => {
+const ellipsis = ($string: string, $maxLength: number, $encodable?: boolean): string => {
   if (!$string || getDataType($string) !== 'string') {
     throw new Error(`invalid first param: $string`);
   }
