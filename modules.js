@@ -31,4 +31,7 @@ module.exports = {
   // Object
   hasProp: 'src/utils/Object/hasProp',
   omitProps: 'src/utils/Object/omitProps',
+
+  // String
+  ellipsis: 'src/utils/String/ellipsis',
 };
