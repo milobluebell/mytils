@@ -26,7 +26,7 @@ export const localeOptions = Object.keys(localeRefs);
  *
  * @解释     返回内容小写
  */
-const getDataType = ($param: Object, $locale?: localeOptionTypes): string => {
+const getDataType = ($param: any, $locale?: localeOptionTypes): string => {
   if (!$locale || $locale === 'en' || localeOptions.includes($locale)) {
     const $type = Object.prototype.toString
       .call($param)
