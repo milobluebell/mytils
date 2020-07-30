@@ -22,29 +22,21 @@ jobs:
 
       - name: npm install
         run: npm install
-        env:
-          CI: true
 
       - name: unit test
         run: npm run test
-        env: 
-          CI: true
 
       - name: lint
         run: npm run lint
-        env: 
-          CI: true
 
       - name: report codecov
         uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: false
+          fail_ci_if_error: true
 
       - name: build dist
         run: npm run dist
-        env:
-          CI: true
 
       - name: npm publish
         uses: JS-DevTools/npm-publish@v1

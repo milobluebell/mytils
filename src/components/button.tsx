@@ -10,6 +10,7 @@ const buttonStyle = {
   outline: `none`,
   padding: 8,
   borderRadius: 5,
+  borderWidth: 1,
   background: `linear-gradient(#53a0d4, #1b5377)`,
   color: `white`,
 };
