@@ -1,6 +1,6 @@
 import { getAllQueries, TUrlParams } from '../aux';
 
-const matcherTester = /({[a-zA-Z_$]+})+/;
+const matcherTester = /({[a-zA-Z_$0-9]+})+/;
 /**
  *
  * getRestParams($matcher [, $uri]) - 🍀 获取rest风格url中的路径和query参数
