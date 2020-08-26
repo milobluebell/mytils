@@ -1,6 +1,6 @@
 {
   "name": "mytils",
-  "version": "1.2.91",
+  "version": "1.2.92",
   "description": "useful utils",
   "scripts": {
     "start": "per-env",

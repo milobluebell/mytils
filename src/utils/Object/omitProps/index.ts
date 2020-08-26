@@ -11,6 +11,12 @@ import hasProp from '../hasProp';
  */
 const omitProps = <T extends { [key: string]: any }, U extends string>($key: U | U[], $targetObj: T): Omit<T, U> => {
   const targetType = getDataType($targetObj);
+  if (!$targetObj) {
+    return $targetObj;
+  }
+  if (!Object.keys($targetObj).length) {
+    return cloneDeep($targetObj);
+  }
   if (targetType !== 'object') {
     throw new Error(`second param targetObj should be an object,but got ${targetType}`);
   }
