@@ -31,13 +31,15 @@
 
     - [hasProp](doc/object/hasProp)
     - [omitProps](doc/object/omitProps)
+    - [purgeData](doc/object/purgeData)
 
   - String
 
     - [ellipsis](doc/string/ellipsis)
 
-  - 转义
+  - 转义或翻译
 
     - [decodeUTF8](doc/translate/decodeUTF8)
     - [encodeUTF8](doc/translate/encodeUTF8)
     - [evalObject](doc/translate/evalObject)
+    - [numberToZh](doc/translate/numberToZh)

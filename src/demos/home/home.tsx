@@ -13,8 +13,8 @@ import formatUnixTime from 'src/utils/Time/formatUnixTime';
 import getByteLength from 'src/utils/Calc/getByteLength';
 import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 import encodeUTF8 from 'src/utils/Translate/encodeUTF8';
+import numberToZh from 'src/utils/Translate/numberToZh';
 import ellipsis from 'src/utils/String/ellipsis';
-import digitToZh from 'src/utils/Translate/digitToZh';
 
 const hStyle = {
   backgroundColor: `#8e8e8e`,
@@ -44,7 +44,7 @@ const Home: FunctionalComponent = () => {
       <Demo params={['一给我里，giao,giao！']} method={encodeUTF8}></Demo>
       <Demo params={['&#x5B9D;&#x8D1D;&#x56DE;&#x5BB6;&#x5403;&#x996D;&#x5417;&#xFF1F;']} method={decodeUTF8}></Demo>
       <Demo params={['一给我里，giao,giao！', 5, true]} method={ellipsis}></Demo>
-      <Demo params={[123450, 'capital']} method={digitToZh}></Demo>
+      <Demo params={[123450, 'capital']} method={numberToZh}></Demo>
       {/* end of demos */}
     </div>
   );

@@ -1,4 +1,4 @@
-const numerCharAlias = [
+const numericCharAlias = [
   {
     lowercase: '〇',
     uppcase: '零',
@@ -73,19 +73,19 @@ const quotAlias = [
 
 /**
  *
- * digitToZh($digit [, $isCapital]) - 🍀 数字转中文
+ * numberToZh($number [, $isCapital]) - 🍀 数字转中文
  *
- * @param  $digit      待转数字或字符串
+ * @param  $number      待转数字或字符串
  * @param  $isCapital  是否为"大写中文"
  *
  */
-const digitToZh = ($digit: number | string, $isCapital?: boolean): string => {
-  if (!$digit) {
+const numberToZh = ($number: number, $isCapital?: boolean): string => {
+  if (!$number) {
     return '';
   }
 
-  const digit = String(Number($digit));
-  const zhChars = Object.values(numerCharAlias).map((alias) => ($isCapital !== true ? alias.lowercase : alias.uppcase));
+  const [digit, afterDecimals = ''] = String(Number($number)).split('.');
+  const zhChars = Object.values(numericCharAlias).map((alias) => ($isCapital !== true ? alias.lowercase : alias.uppcase));
   const theZero = zhChars[0];
   const units = Object.values(unitAlias)
     .map((alias) => ($isCapital !== true ? alias.lowercase : alias.uppcase))
@@ -101,7 +101,6 @@ const digitToZh = ($digit: number | string, $isCapital?: boolean): string => {
   let segment;
   //
   const zeroFlag = [];
-  const allZeroFlag = [];
   let result = '';
 
   while (breakLen > 0) {
@@ -138,7 +137,14 @@ const digitToZh = ($digit: number | string, $isCapital?: boolean): string => {
       breakLen -= 1;
     }
   }
+  // 如果存在小数点，则字面翻译
+  if (afterDecimals !== '') {
+    result += `点`;
+    for (let k = 0; k < afterDecimals.length; k += 1) {
+      result += zhChars[parseInt(afterDecimals[k], 10)];
+    }
+  }
   return result.replace(/^一十/, '十');
 };
 
-export default digitToZh;
+export default numberToZh;
