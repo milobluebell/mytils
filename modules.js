@@ -27,10 +27,12 @@ module.exports = {
   decodeUTF8: 'src/utils/Translate/decodeUTF8',
   encodeUTF8: 'src/utils/Translate/encodeUTF8',
   evalObject: 'src/utils/Translate/evalObject',
+  numberToZh: 'src/utils/Translate/numberToZh',
 
   // Object
   hasProp: 'src/utils/Object/hasProp',
   omitProps: 'src/utils/Object/omitProps',
+  purgeData: 'src/utils/Object/purgeData',
 
   // String
   ellipsis: 'src/utils/String/ellipsis',

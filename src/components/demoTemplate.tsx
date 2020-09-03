@@ -46,6 +46,7 @@ const resultStyle = {
   color: `red`,
   marginLeft: 10,
 };
+
 export const Demo: FunctionalComponent<IDemoProps> = (props: IDemoProps) => {
   const [data, setData] = useState(props?.params);
   const [result, setResult] = useState(undefined);
