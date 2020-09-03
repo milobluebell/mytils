@@ -1,5 +1,5 @@
 import getByteLength, { Errors } from '..';
-import vendors from '../../../../../shared/vendors';
+import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 
 describe('getByteLength', function() {
   // 编码小于255的字符
@@ -23,7 +23,7 @@ describe('getByteLength', function() {
   // utf8中文
   it('input is zh-cn char in UTF8', function() {
     const utf8Origin = '&#x9EBB;&#x9EBB;&#xFF0C;&#x6211;&#x60F3;&#x5403;&#x70E4;&#x5C71;&#x836F;';
-    const urf8char = vendors.decodeUTF8(utf8Origin);
+    const urf8char = decodeUTF8(utf8Origin);
     expect(getByteLength(urf8char)).toBe(27);
   });
 

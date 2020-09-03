@@ -27,6 +27,7 @@ module.exports = {
   decodeUTF8: 'src/utils/Translate/decodeUTF8',
   encodeUTF8: 'src/utils/Translate/encodeUTF8',
   evalObject: 'src/utils/Translate/evalObject',
+  digitToZh: 'src/utils/Translate/digitToZh',
 
   // Object
   hasProp: 'src/utils/Object/hasProp',

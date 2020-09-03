@@ -9,9 +9,9 @@ const buttonStyle = {
   cursor: `pointer`,
   outline: `none`,
   padding: 8,
-  borderRadius: 5,
+  borderRadius: 8,
   borderWidth: 1,
-  background: `linear-gradient(#53a0d4, #1b5377)`,
+  background: `linear-gradient(#53a0d4, #327dad)`,
   color: `white`,
 };
 export const Button: FunctionalComponent<IButtonProps> = (props: IButtonProps) => {
