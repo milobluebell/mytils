@@ -8,12 +8,13 @@ import analyze from 'rollup-plugin-analyzer';
 
 const path = require('path');
 const packageJson = require('./package.json');
+const { genModules } = require('./scripts/common/genModules');
 
-const srcDir = 'src';
+const srcDir = path.resolve('src');
 
 const emitConfig = (type) => {
   return {
-    input: `${path.resolve(srcDir)}/utils/index.ts`,
+    input: `${srcDir}/utils/index.ts`,
     output: Object.assign(
       {},
       {
@@ -73,7 +74,7 @@ const emitConfig = (type) => {
 };
 
 //
-const inputor = require('./modules.js');
+const inputor = genModules(path.join(srcDir, './utils/index.ts'));
 
 export default ['es', 'cjs', 'umd'].map((item) => {
   const config = emitConfig(item);

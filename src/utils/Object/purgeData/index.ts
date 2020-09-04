@@ -5,9 +5,9 @@ type supporttedPredicateType = string | boolean | number | symbol | undefined | 
 const defaultPredicates = [undefined, null];
 /**
  *
- * purgeData($obj [, $predicates]) - 🍀 根据断言，清洗对象或数组
+ * purgeData($obj [, $predicates]) - 🍀 根据断言，清洗对象或数组的无用数据
  *
- * @param  $obj        待清洗的对象
+ * @param  $obj         待清洗的对象
  * @param  $predicates  清洗断言（数组中的元素对应需要清洗掉的key）
  *
  */

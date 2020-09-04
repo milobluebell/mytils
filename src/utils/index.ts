@@ -24,6 +24,7 @@ export { default as getNumFromRatio } from './Number/getNumFromRatio';
 // Object
 export { default as hasProp } from './Object/hasProp';
 export { default as omitProps } from './Object/omitProps';
+export { default as purgeData } from './Object/purgeData';
 
 // String
 export { default as ellipsis } from './String/ellipsis';
