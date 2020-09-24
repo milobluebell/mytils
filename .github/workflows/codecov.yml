@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@master
+          
+      - name: install dependencies
+        run: npm install
+        env:
+          CI: true
         
       - name: unit test
         run: npm run test
