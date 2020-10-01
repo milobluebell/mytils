@@ -1,4 +1,4 @@
-import ellipsis from '..';
+import serialize from '..';
 
 const constants = {
   result_1: {
@@ -43,18 +43,18 @@ const fn3 = function() {
 describe('serialize', function() {
   // resolve一个promise
   it(`resolve one Promise`, function() {
-    return expect(ellipsis([fn1])).resolves.toEqual([[constants.result_1], []]);
+    return expect(serialize([fn1])).resolves.toEqual([[constants.result_1], []]);
   });
 
   // reject一个promise
   it(`reject one Promise`, function() {
-    return expect(ellipsis([fn2])).rejects.toEqual([[], [constants.result_2]]);
+    return expect(serialize([fn2])).rejects.toEqual([[], [constants.result_2]]);
   });
 
   // 处理多项均resolved的promise
   it(`handle multi Promise`, function() {
     expect.assertions(1);
-    return ellipsis([fn1, fn2]).catch((err) => {
+    return serialize([fn1, fn2]).catch((err) => {
       expect(err).toEqual([
         [
           {
@@ -76,7 +76,7 @@ describe('serialize', function() {
 
   // 测试axios
   it(`resolve one Promise`, async function() {
-    const result = await ellipsis([fn3, fn1]);
+    const result = await serialize([fn3, fn1]);
     expect(result).toEqual([
       [
         {
