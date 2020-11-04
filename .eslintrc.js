@@ -20,5 +20,6 @@ module.exports = {
     'no-await-in-loop': 1,
     'prefer-promise-reject-errors': 1,
     'no-unused-expressions': 1,
+    'no-plusplus': 0,
   },
 };

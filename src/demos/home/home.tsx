@@ -15,10 +15,6 @@ import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 import encodeUTF8 from 'src/utils/Translate/encodeUTF8';
 import numberToZh from 'src/utils/Translate/numberToZh';
 import ellipsis from 'src/utils/String/ellipsis';
-
-import serialize from 'src/utils/Promise/serialize';
-import PromiseStrategy from 'src/utils/Promise/serialize/StrategyFactory.class';
-
 import axios from 'axios';
 
 const hStyle = {
@@ -27,53 +23,6 @@ const hStyle = {
   color: '#dadada',
 };
 const Home: FunctionalComponent = () => {
-  const fn1 = () =>
-    fetch('https://dev-api-libra.codemao.cn/authority/application/menus')
-      .then((res) => {
-        console.log(res, 555);
-        return Promise.resolve(res);
-      })
-      .catch((err) => {
-        console.log(err, 666);
-        return Promise.reject(err);
-      });
-  const fn2 = function(args) {
-    return axios
-      .get('https://dev-api-libra.codemao.cn/authority/application/menus')
-      .then((res) => {
-        console.log(res, 555555);
-        return Promise.resolve(res);
-      })
-      .catch((err) => {
-        console.log(err, 666666);
-        return Promise.reject(err);
-      });
-  };
-  const fn3 = function(args) {
-    return Promise.reject('33');
-    // await fetch('https://www.baidu.com');
-  };
-
-  serialize([fn1, fn2, fn3], {
-    continuous: true,
-    // strategy: new PromiseStrategy({
-    //   success: (a) => {
-    //     console.log(a);
-    //   },
-    //   fail: (b) => {
-    //     console.log(b);
-    //   },
-    // }),
-  })
-    .then((res) => {
-      console.log(res, 111);
-      // console.log(res, '串行结果');
-    })
-    .catch((err) => {
-      console.log(err, 222);
-      // console.log(err, '串行结果 in error');
-    });
-
   return (
     <div>
       <h1 style={hStyle}>🍀 mytils in {process.env.NODE_ENV}</h1>
