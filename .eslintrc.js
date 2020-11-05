@@ -21,5 +21,7 @@ module.exports = {
     'prefer-promise-reject-errors': 1,
     'no-unused-expressions': 1,
     'no-plusplus': 0,
+    'max-classes-per-file': 0,
+    'no-underscore-dangle': 1,
   },
 };

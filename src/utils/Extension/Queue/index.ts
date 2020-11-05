@@ -1,13 +1,14 @@
 /**
- * @name Queue队列
- * https://image-static.segmentfault.com/878/005/878005392-5d4bf0453cca9_articlex
+ * 🍀 Queue队列
  *
  * @function  enqueue    入列，向队尾部添加一个元素，返回成功与否。允许根据优先级降序排列。
  * @function  dequeue    出列，移除队列头部的一个元素，并返回之
- * @function  queueUp    获取队列第一个元素
- * @function  queueDown  获取队列嘴鸥一个元素
+ * @function  front      获取队列第一个元素
+ * @function  end        获取队列嘴鸥一个元素
  * @function  isEmpty    判断队列是否为空
  * @function  size       获取队列中元素数量
+ * @function  clear      清空队列
+ * @function  toString/valueOf 显示队列全部元素
  */
 export default class Queue {
   collection = [];
@@ -18,7 +19,7 @@ export default class Queue {
       if (this.isEmpty()) {
         this.collection.push(element);
       } else {
-        const added: boolean = false;
+        const added = false;
         for (let i; i < this.collection.length; i++) {
           if (priority < i) {
             this.collection.splice(i, 0, element);
@@ -67,5 +68,10 @@ export default class Queue {
   //
   protected toString() {
     return this.collection;
+  }
+
+  //
+  protected valueOf() {
+    return this.toString();
   }
 }

@@ -1,27 +1,28 @@
 import Queue from '..';
 
 /**
- * @name 优先队
+ * @name 优先队列
  */
 export default class PriorityQueue extends Queue {
-  protected enqueue(element: unknown, priority?: number) {
+  protected enqueue(args: [unknown, number]) {
+    const [_, priority] = args;
     if (priority) {
       if (this.isEmpty()) {
-        this.collection.push(element);
+        this.collection.push(args);
       } else {
-        const added: boolean = false;
+        const added = false;
         for (let i; i < this.collection.length; i++) {
           if (priority < i) {
-            this.collection.splice(i, 0, element);
+            this.collection.splice(i, 0, args);
             break;
           }
         }
         if (!added) {
-          this.collection.push(element);
+          this.collection.push(args);
         }
       }
     } else {
-      this.collection.push(element);
+      this.collection.push(args);
     }
   }
 }
