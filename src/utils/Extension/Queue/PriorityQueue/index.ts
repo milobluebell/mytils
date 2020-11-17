@@ -1,7 +1,7 @@
 import Queue from '..';
 
 export default class PriorityQueue extends Queue {
-  protected enqueue(args: [unknown, number]) {
+  enqueue(args: [unknown, number]) {
     const [_, priority] = args;
     if (priority) {
       if (this.isEmpty()) {
