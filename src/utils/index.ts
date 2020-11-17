@@ -29,6 +29,4 @@ export { default as purgeData } from './Object/purgeData';
 // String
 export { default as ellipsis } from './String/ellipsis';
 
-// Promise
-export { default as serialize } from './Promise/serialize';
-export { default as PromiseStrategy } from './Promise/serialize/StrategyFactory.class';
+// Extension

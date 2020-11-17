@@ -1,13 +1,13 @@
 {
   "name": "mytils",
-  "version": "1.3.4",
+  "version": "2.0.0",
   "description": "one useful utilities",
   "scripts": {
     "start": "per-env",
+    "start:doc": "npx docsify serve docs",
     "start:development": "npm run -s dev",
     "dist": "rm -rf es dist && npx rollup -c",
     "dev": "preact watch",
-    "doc": "npx docsify serve docs",
     "lint": "./scripts/lint.sh",
     "test": "jest ./src -c --coverage",
     "pretty-quick": "pretty-quick",
