@@ -16,5 +16,12 @@ module.exports = {
     'no-control-regex': 1,
     'prefer-object-spread': 0,
     'no-restricted-syntax': 1,
+    'no-async-promise-executor': 0,
+    'no-await-in-loop': 1,
+    'prefer-promise-reject-errors': 1,
+    'no-unused-expressions': 1,
+    'no-plusplus': 0,
+    'max-classes-per-file': 0,
+    'no-underscore-dangle': 1,
   },
 };

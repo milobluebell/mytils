@@ -28,3 +28,6 @@ export { default as purgeData } from './Object/purgeData';
 
 // String
 export { default as ellipsis } from './String/ellipsis';
+
+// Extension
+export { default as createExtension } from './Extension';

@@ -1,0 +1,32 @@
+name: codecov
+
+on:
+  push:
+    branches:
+      - 'sprint/*'
+  pull_request:
+    types: [opened,reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
+          
+      - name: install dependencies
+        run: npm install
+        env:
+          CI: true
+        
+      - name: unit test
+        run: npm run test
+
+      - name: report codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          env_vars: JAVASCRIPT
+          name: codecov-umbrella
+          fail_ci_if_error: true

@@ -1,45 +1,49 @@
-- 开始
+- 计算
 
-  - [安装](doc/start)
-  - [版本策略](doc/versions)
+  - [getByteLength](doc/calc/getByteLength)
+  - [getDataType](doc/calc/getDataType)
 
-- 文档
+- 时间
 
-  - 计算
+  - [formatUnixTime](doc/time/formatUnixTime)
+  - [countdown](doc/time/countdown)
+  - [countdownNow](doc/time/countdownNow)
+  - [countdownDuration](doc/time/countdownDuration)
 
-    - [getByteLength](doc/calc/getByteLength)
-    - [getDataType](doc/calc/getDataType)
+- Url
 
-  - 时间
+  - [getQueryParams](doc/url/getQueryParams)
+  - [getRestParams](doc/url/getRestParams)
 
-    - [formatUnixTime](doc/time/formatUnixTime)
-    - [countdown](doc/time/countdown)
-    - [countdownNow](doc/time/countdownNow)
-    - [countdownDuration](doc/time/countdownDuration)
+- Number
 
-  - Url
+  - [getRatioFromNum](doc/number/getRatioFromNum)
+  - [getNumFromRatio](doc/number/getNumFromRatio)
 
-    - [getQueryParams](doc/url/getQueryParams)
-    - [getRestParams](doc/url/getRestParams)
+- Object
 
-  - Number
+  - [hasProp](doc/object/hasProp)
+  - [omitProps](doc/object/omitProps)
+  - [purgeData](doc/object/purgeData)
 
-    - [getRatioFromNum](doc/number/getRatioFromNum)
-    - [getNumFromRatio](doc/number/getNumFromRatio)
+- String
 
-  - Object
+  - [ellipsis](doc/string/ellipsis)
 
-    - [hasProp](doc/object/hasProp)
-    - [omitProps](doc/object/omitProps)
-    - [purgeData](doc/object/purgeData)
+- 转义或翻译
 
-  - String
+  - [decodeUTF8](doc/translate/decodeUTF8)
+  - [encodeUTF8](doc/translate/encodeUTF8)
+  - [evalObject](doc/translate/evalObject)
+  - [numberToZh](doc/translate/numberToZh)
 
-    - [ellipsis](doc/string/ellipsis)
+- 扩展
 
-  - 转义或翻译
+  - 队列
 
-    - [decodeUTF8](doc/translate/decodeUTF8)
-    - [encodeUTF8](doc/translate/encodeUTF8)
-    - [evalObject](doc/translate/evalObject)
-    - [numberToZh](doc/translate/numberToZh)
+    - [普通队列](doc/extension/queue/queue)
+    - [优先队列](doc/extension/queue/priority-queue)
+
+  - 链表
+    - [普通链表](doc/extension/linked-list/linked-list)
+    - [双向链表](doc/extension/linked-list/doubly-linked-list)

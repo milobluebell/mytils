@@ -15,6 +15,7 @@ import decodeUTF8 from 'src/utils/Translate/decodeUTF8';
 import encodeUTF8 from 'src/utils/Translate/encodeUTF8';
 import numberToZh from 'src/utils/Translate/numberToZh';
 import ellipsis from 'src/utils/String/ellipsis';
+import createExtension from 'src/utils/Extension';
 
 const hStyle = {
   backgroundColor: `#8e8e8e`,
@@ -22,6 +23,7 @@ const hStyle = {
   color: '#dadada',
 };
 const Home: FunctionalComponent = () => {
+  createExtension();
   return (
     <div>
       <h1 style={hStyle}>🍀 mytils in {process.env.NODE_ENV}</h1>

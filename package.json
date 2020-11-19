@@ -1,13 +1,13 @@
 {
   "name": "mytils",
-  "version": "1.3.21",
+  "version": "2.0.0",
   "description": "one useful utilities",
   "scripts": {
     "start": "per-env",
+    "start:doc": "npx docsify serve docs",
     "start:development": "npm run -s dev",
     "dist": "rm -rf es dist && npx rollup -c",
     "dev": "preact watch",
-    "doc": "npx docsify serve docs",
     "lint": "./scripts/lint.sh",
     "test": "jest ./src -c --coverage",
     "pretty-quick": "pretty-quick",
@@ -35,6 +35,7 @@
     "@types/webpack-env": "^1.15.2",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
+    "axios": "^0.20.0",
     "babel-preset-es2015": "^6.24.1",
     "docsify": "^4.11.3",
     "docsify-cli": "^4.4.0",
