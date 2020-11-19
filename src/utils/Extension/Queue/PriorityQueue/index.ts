@@ -5,21 +5,21 @@ export default class PriorityQueue extends Queue {
     const [_, priority] = args;
     if (priority) {
       if (this.isEmpty()) {
-        this.collection.push(args);
+        this.collections.push(args);
       } else {
         const added = false;
-        for (let i; i < this.collection.length; i++) {
+        for (let i; i < this.collections.length; i++) {
           if (priority < i) {
-            this.collection.splice(i, 0, args);
+            this.collections.splice(i, 0, args);
             break;
           }
         }
         if (!added) {
-          this.collection.push(args);
+          this.collections.push(args);
         }
       }
     } else {
-      this.collection.push(args);
+      this.collections.push(args);
     }
   }
 }

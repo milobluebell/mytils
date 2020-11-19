@@ -11,48 +11,48 @@
  * @function  toString/valueOf 显示队列全部元素
  */
 export default class Queue {
-  collection = [];
+  collections = [];
 
   //
   enqueue(element: unknown, priority?: number) {
     if (priority) {
       if (this.isEmpty()) {
-        this.collection.push(element);
+        this.collections.push(element);
       } else {
         const added = false;
-        for (let i; i < this.collection.length; i++) {
+        for (let i; i < this.collections.length; i++) {
           if (priority < i) {
-            this.collection.splice(i, 0, element);
+            this.collections.splice(i, 0, element);
             break;
           }
         }
         if (!added) {
-          this.collection.push(element);
+          this.collections.push(element);
         }
       }
     } else {
-      this.collection.push(element);
+      this.collections.push(element);
     }
   }
 
   //
   dequeue() {
-    this.collection.shift();
+    this.collections.shift();
   }
 
   //
   front() {
-    return this.collection[0];
+    return this.collections[0];
   }
 
   //
   end() {
-    return this.collection[this.collection.length - 1];
+    return this.collections[this.collections.length - 1];
   }
 
   //
   size() {
-    return this.collection.length;
+    return this.collections.length;
   }
 
   //
@@ -62,12 +62,12 @@ export default class Queue {
 
   //
   clear() {
-    this.collection = [];
+    this.collections = [];
   }
 
   //
   toString() {
-    return this.collection;
+    return this.collections;
   }
 
   //

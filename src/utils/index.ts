@@ -30,3 +30,4 @@ export { default as purgeData } from './Object/purgeData';
 export { default as ellipsis } from './String/ellipsis';
 
 // Extension
+export { default as createExtension } from './Extension';

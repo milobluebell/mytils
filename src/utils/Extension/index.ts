@@ -1,13 +1,15 @@
 import Queue from './Queue';
 import PriorityQueue from './Queue/PriorityQueue';
 import LinkedList from './LinkedList';
+import Collection from './Collection';
+import HashTable from './HashTable';
+import Stack from './Stack';
 
-const extensions = [Queue, PriorityQueue, LinkedList];
-const Window = window as any;
+const extensions = [Queue, PriorityQueue, LinkedList, Collection, HashTable, Stack];
 const createExtension = () => {
-  if (Window) {
+  if (window) {
     extensions.forEach((extension) => {
-      Window[extension.name] = extension;
+      window[extension.name] = extension;
     });
   }
 };
