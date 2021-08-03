@@ -1,4 +1,5 @@
-import { sortBy, findIndex } from 'lodash-es';
+import sortBy from 'lodash.sortby';
+import findIndex from 'lodash.findindex';
 import { formatMap } from '..';
 import { formattedCountdown, IFormatter } from '../../aux';
 

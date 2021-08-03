@@ -1,4 +1,4 @@
-import { round } from 'lodash-es';
+import round from 'lodash.round';
 import { supplyZero } from '../aux';
 
 const maxPrecisionBoundary = 6;

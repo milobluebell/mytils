@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash-es';
+import cloneDeep from 'lodash.clonedeep';
 import getDataType from 'src/utils/Calc/getDatatype';
 
 type supporttedPredicateType = string | boolean | number | symbol | undefined | null;
@@ -20,7 +20,7 @@ const purgeData = ($obj: Record<string, unknown> | any[], $predicates?: supportt
   if (isArray) {
     newObj = (newObj as supporttedPredicateType[]).filter((item: supporttedPredicateType) => !predicates.includes(item));
   } else {
-    Object.entries(newObj).forEach((kv) => {
+    Object.entries(newObj).forEach((kv: [string, any]) => {
       const [key, value] = kv;
       if (predicates.includes(value)) {
         delete newObj[key];

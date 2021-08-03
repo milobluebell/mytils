@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
-import { sortBy, findIndex } from 'lodash-es';
+import sortBy from 'lodash.sortby';
+import findIndex from 'lodash.findindex';
 import { uniTime, formattedCountdown, IFormatter } from '../aux';
 
 // @desc 指定的是小于这个时间(s)的时候的展示格式

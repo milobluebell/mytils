@@ -1,5 +1,5 @@
 import getDataType from 'src/utils/Calc/getDatatype';
-import { cloneDeep } from 'lodash-es';
+import cloneDeep from 'lodash.clonedeep';
 import hasProp from '../hasProp';
 
 /**
